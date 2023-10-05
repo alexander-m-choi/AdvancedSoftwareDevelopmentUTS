@@ -1,0 +1,29 @@
+﻿@model List<Artist>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Artists</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Country</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var artist in Model)
+        {
+            <tr>
+                <td>@artist.id</td>
+                <td>@artist.name</td>
+                <td>@artist.genre</td>
+                <td>@artist.country</td>
+                <td>@artist.description</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
