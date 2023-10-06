@@ -6,7 +6,7 @@ using ASDAssignmentUTS.Models;
 
 namespace ASDAssignmentUTS.Controllers
 {
-    public class AdminController : Controller
+    public class AdminUserController : Controller
     {
         // GET: AdminUserController
         public ActionResult UserManagement()
@@ -34,7 +34,16 @@ namespace ASDAssignmentUTS.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                //creates a new user object instance.
+                User user = new User
+                (
+                    collection["username"],
+                    collection["password"],
+                    collection["email"]
+                );
+                //adds the user to the database.
+                UserDBManager.AddUser(user);
+                return RedirectToAction(nameof(UserManagement));
             }
             catch
             {

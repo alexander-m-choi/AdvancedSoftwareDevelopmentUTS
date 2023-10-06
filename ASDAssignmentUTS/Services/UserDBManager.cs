@@ -34,5 +34,21 @@ namespace ASDAssignmentUTS.Services
             }
             return users;
         }
+
+        public static void AddUser(User user)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand())
+                {
+                    connection.Open();
+                    command.CommandText = "INSERT INTO RowanUsers VALUES ((SELECT COALESCE(MAX(id), + 1, 1) FROM RowanUsers), @username, @password, @email)";
+                    command.Parameters.AddWithValue("@username", user.username);
+                    command.Parameters.AddWithValue("@password", user.password);
+                    command.Parameters.AddWithValue("@email", user.email);
+                    command.ExecuteNonQuery();
+                };
+            }
+        }
     }
 }

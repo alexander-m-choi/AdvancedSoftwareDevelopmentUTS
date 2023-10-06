@@ -16,8 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\chris\Source\Repos\alexander-m-choi\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Admin/UserManagement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlck1hbmFnZW1lbnQuY3NodG1s
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/UserManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVzZXJNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
