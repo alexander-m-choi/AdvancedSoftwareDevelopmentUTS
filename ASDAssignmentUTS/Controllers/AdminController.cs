@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ASDAssignmentUTS.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASDAssignmentUTS.Controllers
@@ -13,7 +14,8 @@ namespace ASDAssignmentUTS.Controllers
 
         public ActionResult SongManagement()
         {
-            return View();
+            var artists = new Artist().GetArtists();
+            return View(artists);
         }
 
         // GET: AdminController/Details/5
