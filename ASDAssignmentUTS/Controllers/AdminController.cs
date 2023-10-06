@@ -6,7 +6,7 @@ using ASDAssignmentUTS.Models;
 
 namespace ASDAssignmentUTS.Controllers
 {
-    public class AdminUserController : Controller
+    public class AdminController : Controller
     {
         // GET: AdminUserController
         public ActionResult UserManagement()
