@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rowan\\source\\repos\\ASDAssignmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {}
+    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rowan\\source\\repos\\ASDAssignmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rowan\\source\\repos\\ASDAssignmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
         "projectName": "ASDAssignmentUTS",
-        "projectPath": "C:\\Users\\rowan\\source\\repos\\ASDAssignmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
-        "packagesPath": "C:\\Users\\rowan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rowan\\source\\repos\\ASDAssignmentUTS\\ASDAssignmentUTS\\obj\\",
+        "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rowan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
