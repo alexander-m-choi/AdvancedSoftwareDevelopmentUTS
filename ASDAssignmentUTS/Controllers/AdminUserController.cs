@@ -32,8 +32,8 @@ namespace ASDAssignmentUTS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
-            try
-            {
+            //try
+            //{
                 //creates a new user object instance.
                 User user = new User
                 (
@@ -44,11 +44,11 @@ namespace ASDAssignmentUTS.Controllers
                 //adds the user to the database.
                 UserDBManager.AddUser(user);
                 return RedirectToAction(nameof(UserManagement));
-            }
-            catch
-            {
-                return View();
-            }
+            //}
+            //catch
+            //{
+              //  return View();
+            //}
         }
 
         // GET: AdminUserController/Edit/5

@@ -42,7 +42,8 @@ namespace ASDAssignmentUTS.Services
                 using (var command = new SqlCommand())
                 {
                     connection.Open();
-                    command.CommandText = "INSERT INTO RowanUsers VALUES ((SELECT COALESCE(MAX(id), + 1, 1) FROM RowanUsers), @username, @password, @email)";
+                    command.Connection = connection;
+                    command.CommandText = @"INSERT INTO RowanUsers (id, username, password, email) VALUES ((SELECT COALESCE(MAX(id), + 1, 1) FROM RowanUsers), @username, @password, @email)";
                     command.Parameters.AddWithValue("@username", user.username);
                     command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
