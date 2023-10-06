@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ASDAssignmentUTS.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\wwwroot\\css\\homepage.css",
+      "PackagePath": "staticwebassets\\css\\homepage.css"
+    },
+    {
       "Id": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

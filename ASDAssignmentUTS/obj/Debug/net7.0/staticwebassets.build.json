@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ArjDXvgH4+4c97zHp/0Ko7YPuNmtNd1VJFrawBjcioU=",
+  "Hash": "zCInUKvwCChKAZ9ZudxtUDvqUhta+IGzbATXcwqWMu0=",
   "Source": "ASDAssignmentUTS",
   "BasePath": "_content/ASDAssignmentUTS",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ASDAssignmentUTS.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\wwwroot\\css\\homepage.css",
+      "SourceId": "ASDAssignmentUTS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\wwwroot\\",
+      "BasePath": "_content/ASDAssignmentUTS",
+      "RelativePath": "css/homepage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\homepage.css"
     },
     {
       "Identity": "C:\\Users\\Aamash Qaisar\\source\\repos\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\wwwroot\\css\\site.css",
