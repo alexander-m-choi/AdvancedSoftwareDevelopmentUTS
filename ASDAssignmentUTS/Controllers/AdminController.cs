@@ -1,4 +1,5 @@
 ﻿using ASDAssignmentUTS.Models;
+using ASDAssignmentUTS.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,8 +25,8 @@ namespace ASDAssignmentUTS.Controllers
             return View();
         }
 
-        // GET: AdminController/Create
-        public ActionResult Create()
+        // GET: AdminController/AddArtist
+        public ActionResult AddArtist()
         {
             return View();
         }
@@ -33,16 +34,23 @@ namespace ASDAssignmentUTS.Controllers
         // POST: AdminController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult AddArtist(IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //try
+            //{
+                var artist = new Artist();
+                //captures the data from the form that was imputed by the user.
+                artist.name = collection["name"];
+                artist.genre = collection["genre"];
+                artist.country = collection["country"];
+                artist.description = collection["description"];
+                DBManager.AddArtist(artist);
+                return RedirectToAction(nameof(SongManagement));
+            //}
+            //catch
+            //{
+              //  return View();
+            //}
         }
 
         // GET: AdminController/Edit/5

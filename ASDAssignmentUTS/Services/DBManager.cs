@@ -13,12 +13,13 @@ namespace ASDAssignmentUTS.Services
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
                 conn.Open();
-                string sql = @"INSERT INTO Artist (name, genre, country, description) VALUES (@name, @genre, @country, @description)";
+                string sql = @"INSERT INTO Artist (id, name, genre, country, description) VALUES ((SELECT COALESCE(MAX(id) + 1, 1) FROM Artist), @name, @genre, @country, @description)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@name", artist.name);
                 cmd.Parameters.AddWithValue("@genre", artist.genre);
                 cmd.Parameters.AddWithValue("@country", artist.country);
                 cmd.Parameters.AddWithValue("@description", artist.description);
+                
                 cmd.ExecuteNonQuery();
             }
         }
