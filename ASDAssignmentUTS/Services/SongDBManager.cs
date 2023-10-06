@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 namespace ASDAssignmentUTS.Services
 {
     //this is a helper class i am going to use for my features.
-    public static class DBManager
+    public static class SongDBManager
     {
         static readonly string connectionStr = DBConnector.GetConnectionString();
 

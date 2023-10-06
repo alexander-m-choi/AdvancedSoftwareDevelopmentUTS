@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ASDAssignmentUTS.Controllers
 {
-    public class AdminController : Controller
+    public class AdminSongController : Controller
     {
         // GET: AdminController
         public ActionResult Index()
@@ -44,7 +44,7 @@ namespace ASDAssignmentUTS.Controllers
                 artist.genre = collection["genre"];
                 artist.country = collection["country"];
                 artist.description = collection["description"];
-                DBManager.AddArtist(artist);
+                SongDBManager.AddArtist(artist);
                 return RedirectToAction(nameof(SongManagement));
             //}
             //catch
