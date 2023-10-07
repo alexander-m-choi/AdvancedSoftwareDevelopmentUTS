@@ -1,4 +1,9 @@
-﻿namespace ASDAssignmentUTS.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ASDAssignmentUTS.Services;
+
+namespace ASDAssignmentUTS.Models
 {
     public class Song
     {
@@ -12,5 +17,7 @@
         {
 
         }
+
+        public String ArtistName { get => SongDBManager.GetArtistName(artistId); }
     }
 }

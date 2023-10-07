@@ -21,6 +21,7 @@ namespace ASDAssignmentUTS.Services
                 cmd.Parameters.AddWithValue("@description", artist.description);
                 
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
         }
 
@@ -43,6 +44,7 @@ namespace ASDAssignmentUTS.Services
                     song.description = reader["description"].ToString();
                     songs.Add(song);
                 }
+                conn.Close();
             }
             return songs;
         }
@@ -60,7 +62,29 @@ namespace ASDAssignmentUTS.Services
                 cmd.Parameters.AddWithValue("@description", song.description);
                 
                 cmd.ExecuteNonQuery();
+                conn.Close();
+                
             }
+        }
+
+        //returns the Artist Name
+        public static string GetArtistName(int id)
+        {
+            string artistName = "";
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"SELECT name FROM Artist WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    artistName = reader["name"].ToString();
+                }
+                conn.Close();
+            }
+            return artistName;
         }
     }
 
