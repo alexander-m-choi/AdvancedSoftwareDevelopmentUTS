@@ -13,7 +13,7 @@ namespace ASDAssignmentUTS.Controllers
             return View();
         }
 
-        public ActionResult SongManagement()
+        public ActionResult ArtistManagement()
         {
             var artists = new Artist().GetArtists();
             return View(artists);
@@ -45,7 +45,7 @@ namespace ASDAssignmentUTS.Controllers
                 artist.country = collection["country"];
                 artist.description = collection["description"];
                 SongDBManager.AddArtist(artist);
-                return RedirectToAction(nameof(SongManagement));
+                return RedirectToAction(nameof(ArtistManagement));
             //}
             //catch
             //{
