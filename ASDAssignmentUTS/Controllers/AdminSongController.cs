@@ -8,9 +8,10 @@ namespace ASDAssignmentUTS.Controllers
     public class AdminSongController : Controller
     {
         // GET: AdminController
-        public ActionResult Index()
+        public ActionResult SongManagement()
         {
-            return View();
+            List<Song> songs = SongDBManager.GetSongs();
+            return View(songs);
         }
 
         public ActionResult ArtistManagement()
@@ -36,8 +37,8 @@ namespace ASDAssignmentUTS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddArtist(IFormCollection collection)
         {
-            //try
-            //{
+            try
+            {
                 var artist = new Artist();
                 //captures the data from the form that was imputed by the user.
                 artist.name = collection["name"];
@@ -46,11 +47,40 @@ namespace ASDAssignmentUTS.Controllers
                 artist.description = collection["description"];
                 SongDBManager.AddArtist(artist);
                 return RedirectToAction(nameof(ArtistManagement));
-            //}
-            //catch
-            //{
-              //  return View();
-            //}
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //GET: AdminController/AddSong
+        public ActionResult AddSong()
+        {
+            var artists = new Artist().GetArtists();
+            ViewBag.Artists = artists;
+
+            return View();
+        }
+        // POST: AdminController/AddSong
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddSong(IFormCollection collection)
+        {
+            try
+            {
+                var song = new Song();
+                //captures the data from the form that was imputed by the user.
+                song.name = collection["name"];
+                song.artistId = Convert.ToInt32(collection["artistId"]);
+                song.genre = collection["genre"];
+                song.description = collection["description"];
+                SongDBManager.AddSong(song);
+                return RedirectToAction(nameof(SongManagement));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: AdminController/Edit/5
