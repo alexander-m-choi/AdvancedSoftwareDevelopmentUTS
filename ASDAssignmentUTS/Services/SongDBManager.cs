@@ -71,20 +71,95 @@ namespace ASDAssignmentUTS.Services
         public static string GetArtistName(int id)
         {
             string artistName = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT name FROM Artist WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        artistName = reader["name"].ToString();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception e) //this is error handling in case if the artist has been deleted.
+            {
+                artistName = "";
+            }
+            
+            return artistName;
+        }
+
+        public static void DeleteSong(int id)
+        {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
                 conn.Open();
-                string sql = @"SELECT name FROM Artist WHERE id = @id";
+                string sql = @"DELETE FROM Song WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+        
+        public static List<Song> GetSongsByArtist(int artistId)
+        {
+            List<Song> songs = new List<Song>();
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"SELECT * FROM Song WHERE artist_id = @artist_id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@artist_id", artistId);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    artistName = reader["name"].ToString();
+                    Song song = new Song();
+                    song.id = Convert.ToInt32(reader["id"]);
+                    song.name = reader["name"].ToString();
+                    song.artistId = Convert.ToInt32(reader["artist_id"]);
+                    song.genre = reader["genre"].ToString();
+                    song.description = reader["description"].ToString();
+                    songs.Add(song);
                 }
                 conn.Close();
             }
-            return artistName;
+            return songs;
+        }
+
+        //deletes all the songs that are associated with the artist.
+        public static void DeleteSongsByArtist(int artistId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"DELETE FROM Song WHERE artist_id = @artist_id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@artist_id", artistId);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        public static void DeleteArtist(int id)
+        {
+            //deletes the songs that is associated with the artist.
+            DeleteSongsByArtist(id);
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"DELETE FROM Artist WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
     }
 
