@@ -1,7 +1,7 @@
 ﻿@model List<Artist>
 
 @{
-    ViewData["Title"] = "SongManagement";
+    ViewData["Title"] = "Artist Management";
 }
 
 <h1>Artist Management</h1>
@@ -52,7 +52,7 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Delete", "DeleteArtist", new { item.id })
                 </td>
             </tr>
         }
