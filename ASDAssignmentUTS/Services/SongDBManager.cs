@@ -49,33 +49,41 @@ namespace ASDAssignmentUTS.Services
             return songs;
         }
 
-        public static List<Song> GetSongsByName(string name)
+        public static Song GetSongByName(string name)
         {
-            List<Song> songs = new List<Song>();
-            using (SqlConnection conn = new SqlConnection(connectionStr))
+            try
             {
-                conn.Open();
-                string sql = @"SELECT * FROM Song WHERE name = @name";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@name", name);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                Song song = new Song();
+                using (var connection = new SqlConnection(connectionStr))
                 {
-                    Song song = new Song();
-                    song.id = Convert.ToInt32(reader["id"]);
-                    song.name = reader["name"].ToString();
-                    song.artistId = Convert.ToInt32(reader["artist_id"]);
-                    song.genre = reader["genre"].ToString();
-                    song.description = reader["description"].ToString();
-                    songs.Add(song);
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"SELECT * FROM Song WHERE name = @name";
+                        command.Parameters.AddWithValue("@name", name);
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+
+                            song.id = Convert.ToInt32(reader["id"]);
+                            song.name = reader["name"].ToString();
+                            song.artistId = Convert.ToInt32(reader["artist_id"]);
+                            song.genre = reader["genre"].ToString();
+                            song.description = reader["description"].ToString();
+
+                        }
+                    }
                 }
-                conn.Close();
+                return song;
             }
-            return songs;
-        }
+            catch
+            {
+                throw new Exception("Song not found");
+            }
+}
 
-
-        public static void AddSong(Song song)
+            public static void AddSong(Song song)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ASDAssignmentUTS.Models.Song>
+﻿@model ASDAssignmentUTS.Models.Song
 
  
 
@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="">
+        <form asp-action="SearchResult">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input asp-for="name" class="form-control" />
@@ -24,56 +24,4 @@
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.id)
-            </th>
-            <th>
-                Title
-            </th>
-            <th>
-                Artist
-            </th>
-            <th>
-                Genre
-            </th>
-            <th>
-                Description
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-@if (Model != null)
-    {
-        <tbody>
-            @foreach (var song in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => song.id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => song.name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => song.ArtistName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => song.genre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => song.description)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    }
-</table>
-    @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
 
