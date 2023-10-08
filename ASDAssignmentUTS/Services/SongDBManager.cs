@@ -49,6 +49,32 @@ namespace ASDAssignmentUTS.Services
             return songs;
         }
 
+        public static List<Song> GetSongsByName(string name)
+        {
+            List<Song> songs = new List<Song>();
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"SELECT * FROM Song WHERE name = @name";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@name", name);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Song song = new Song();
+                    song.id = Convert.ToInt32(reader["id"]);
+                    song.name = reader["name"].ToString();
+                    song.artistId = Convert.ToInt32(reader["artist_id"]);
+                    song.genre = reader["genre"].ToString();
+                    song.description = reader["description"].ToString();
+                    songs.Add(song);
+                }
+                conn.Close();
+            }
+            return songs;
+        }
+
+
         public static void AddSong(Song song)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
