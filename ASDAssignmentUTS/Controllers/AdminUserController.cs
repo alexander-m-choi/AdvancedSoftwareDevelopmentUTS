@@ -52,19 +52,28 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         // GET: AdminUserController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Update(int id)
         {
-            return View();
+            User user = UserDBManager.GetUserById(id);
+            return View(user);
         }
 
         // POST: AdminUserController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Update(int id, IFormCollection collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                User user = new User
+                (
+                    id,
+                    collection["username"],
+                    collection["password"],
+                    collection["email"]
+                );
+                UserDBManager.UpdateUser(user);
+                return RedirectToAction(nameof(UserManagement));
             }
             catch
             {
@@ -84,8 +93,8 @@ namespace ASDAssignmentUTS.Controllers
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
-            {
-                return RedirectToAction(nameof(Index));
+            {   UserDBManager.DeleteUser(id);
+                return RedirectToAction(nameof(UserManagement));
             }
             catch
             {

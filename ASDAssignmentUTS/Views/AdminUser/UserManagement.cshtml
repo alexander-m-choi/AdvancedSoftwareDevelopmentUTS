@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ASDAssignmentUTS.Models.User>
 
 @{
-    ViewData["Title"] = "UserManagement";
+    ViewData["Title"] = "User Management";
 }
 
-<h1>UserManagement</h1>
+<h1>User Management</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,16 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.username)
+                Username
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.email)
+                Email Address
             </th>
             <th></th>
         </tr>
@@ -37,15 +34,12 @@
                 @Html.DisplayFor(modelItem => item.username)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.email)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Update", "Update", new { id = item.id }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new {  id=item.id })
             </td>
         </tr>
 }

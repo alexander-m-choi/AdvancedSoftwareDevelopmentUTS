@@ -17,6 +17,11 @@ namespace ASDAssignmentUTS.Models
             this.email = email;
         }
 
+        public User()
+        {
+
+        }
+
         public User(int id, string username, string password, string email)
         {
             this.id = id;
