@@ -70,21 +70,15 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
         //GET: AdminController/AddSong
-        public ActionResult AddSong()
-        {
-            var artists = new Artist().GetArtists();
-            ViewBag.Artists = artists;
-            //ViewBag.ArtistId = artists[0].id;
-            return View();
-        }
+       
         //adds a song that is from the artist that is selected.
-        /*public ActionResult AddSong(int id)
+        public ActionResult AddSong(int? id)
         {
             var artists = new Artist().GetArtists();
             ViewBag.Artists = artists;
             ViewBag.ArtistId = id;
             return View();
-        }*/
+        }
 
         // POST: AdminController/AddSong
         [HttpPost]
