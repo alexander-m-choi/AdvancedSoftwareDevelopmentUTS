@@ -40,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFNvbmdNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateArtist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFVwZGF0ZUFydGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateSong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFVwZGF0ZVNvbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -84,19 +84,57 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         // GET: AdminController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult UpdateArtist(int id)
         {
-            return View();
+            var artist = SongDBManager.GetArtistById(id);
+            return View(artist);
+        }
+
+        public ActionResult UpdateSong(int id)
+        {
+            var song = SongDBManager.GetSongById(id);
+            return View(song);
         }
 
         // POST: AdminController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult UpdateSong(int id, IFormCollection collection)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var song = new Song();
+                //captures the data from the form that was imputed by the user.
+                song.id = id;
+                song.name = collection["name"];
+                song.artistId = Convert.ToInt32(collection["artistId"]);
+                song.genre = collection["genre"];
+                song.description = collection["description"];
+                SongDBManager.UpdateSong(song);
+                return RedirectToAction(nameof(SongManagement));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        // POST: AdminController/UpdateArtist/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateArtist(int id, IFormCollection collection)
+        {
+            try
+            {
+                var artist = new Artist();
+                //captures the data from the form that was imputed by the user.
+                artist.id = id;
+                artist.name = collection["name"];
+                artist.genre = collection["genre"];
+                artist.country = collection["country"];
+                artist.description = collection["description"];
+                SongDBManager.UpdateArtist(artist);
+                return RedirectToAction(nameof(ArtistManagement));
             }
             catch
             {

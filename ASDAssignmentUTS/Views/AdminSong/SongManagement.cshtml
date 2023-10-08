@@ -31,27 +31,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var song in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.id)
+                @Html.DisplayFor(modelItem => song.id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.name)
+                @Html.DisplayFor(modelItem => song.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ArtistName)
+                @Html.DisplayFor(modelItem => song.ArtistName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.genre)
+                @Html.DisplayFor(modelItem => song.genre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.description)
+                @Html.DisplayFor(modelItem => song.description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "DeleteSong", new { id = item.id })
+                @Html.ActionLink("Update", "UpdateSong", new {  id = song.id }) |
+                @Html.ActionLink("Delete", "DeleteSong", new { id = song.id })
             </td>
         </tr>
 }

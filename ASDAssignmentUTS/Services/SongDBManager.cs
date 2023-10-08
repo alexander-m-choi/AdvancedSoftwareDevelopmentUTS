@@ -161,6 +161,100 @@ namespace ASDAssignmentUTS.Services
                 conn.Close();
             }
         }
+
+        public static Song GetSongById(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM Song WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Song song = new Song();
+                    while (reader.Read())
+                    {
+                        song.id = Convert.ToInt32(reader["id"]);
+                        song.name = reader["name"].ToString();
+                        song.artistId = Convert.ToInt32(reader["artist_id"]);
+                        song.genre = reader["genre"].ToString();
+                        song.description = reader["description"].ToString();
+                    }
+                    conn.Close();
+                    return song;
+                }
+            }
+            catch 
+            {
+                throw new Exception("Song not found");
+            }
+        }
+
+        public static Artist GetArtistById(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM Artist WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Artist artist = new Artist();
+                    while (reader.Read())
+                    {
+                        artist.id = Convert.ToInt32(reader["id"]);
+                        artist.name = reader["name"].ToString();
+                        artist.genre = reader["genre"].ToString();
+                        artist.country = reader["country"].ToString();
+                        artist.description = reader["description"].ToString();
+                    }
+                    conn.Close();
+                    return artist;
+                }
+            }
+            catch
+            {
+                throw new Exception("Artist not found");
+            }
+        }
+
+        public static void UpdateSong(Song song)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"UPDATE Song SET name = @name, artist_id = @artist_id, genre = @genre, description = @description WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@name", song.name);
+                cmd.Parameters.AddWithValue("@artist_id", song.artistId);
+                cmd.Parameters.AddWithValue("@genre", song.genre);
+                cmd.Parameters.AddWithValue("@description", song.description);
+                cmd.Parameters.AddWithValue("@id", song.id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        public static void UpdateArtist(Artist artist)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"UPDATE Artist SET name = @name, genre = @genre, country = @country, description = @description WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@name", artist.name);
+                cmd.Parameters.AddWithValue("@genre", artist.genre);
+                cmd.Parameters.AddWithValue("@country", artist.country);
+                cmd.Parameters.AddWithValue("@description", artist.description);
+                cmd.Parameters.AddWithValue("@id", artist.id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
     }
 
 }

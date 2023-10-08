@@ -31,28 +31,28 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var artist in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.id)
+                    @Html.DisplayFor(modelItem => artist.id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                    @Html.DisplayFor(modelItem => artist.name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.genre)
+                    @Html.DisplayFor(modelItem => artist.genre)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.country)
+                    @Html.DisplayFor(modelItem => artist.country)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.description)
+                    @Html.DisplayFor(modelItem => artist.description)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Update", "UpdateArtist", new { id = artist.id }) |
                     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "DeleteArtist", new { item.id })
+                    @Html.ActionLink("Delete", "DeleteArtist", new { artist.id })
                 </td>
             </tr>
         }
