@@ -1,6 +1,7 @@
 ﻿using ASDAssignmentUTS.Models;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System;
 
 namespace ASDAssignmentUTS.Services
 {
@@ -116,5 +117,54 @@ namespace ASDAssignmentUTS.Services
                 throw new Exception("User not found");
             }
         }
+
+        public static User GetUserByUsername(string username)
+        {
+            try
+            {
+                User user = new User();
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"SELECT * FROM RowanUsers WHERE username = @username";
+                        command.Parameters.AddWithValue("@username", username);
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            user.id = reader.GetInt32(0);
+                            user.username = reader.GetString(1);
+                            user.password = reader.GetString(2);
+                            user.email = reader.GetString(3);
+                        }
+
+                        if(user.username == null || user.username == "" || user.username != username)
+                        {
+                            throw new UserNotFoundException();
+                        }
+                        
+                    }
+                    connection.Close();
+                    return user;
+                }
+            }
+            catch(SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            catch
+            {
+                throw new UserNotFoundException();
+            }
+        }
+    }
+
+    public class UserNotFoundException : Exception
+    {
+        public UserNotFoundException() : base() { }
+        public UserNotFoundException(string message) : base(message) { }
+        public UserNotFoundException(string message, System.Exception inner) : base(message, inner) { }
     }
 }
