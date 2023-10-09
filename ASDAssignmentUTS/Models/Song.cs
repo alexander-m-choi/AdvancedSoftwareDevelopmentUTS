@@ -19,5 +19,6 @@ namespace ASDAssignmentUTS.Models
         }
 
         public String ArtistName { get => SongDBManager.GetArtistName(artistId); }
+      //  public String SearchQuery { get; set; }
     }
 }
