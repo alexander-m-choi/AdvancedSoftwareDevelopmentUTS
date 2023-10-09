@@ -1,0 +1,19 @@
+@model ASDAssignmentUTS.Models.RegisterModel
+
+<h2>Register</h2>
+
+<form method="post" action="/Account/Register">
+    <div>
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" required />
+    </div>
+    <div>
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" name="Email" required />
+    </div>
+    <div>
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" name="Password" required />
+    </div>
+    <button type="submit">Register</button>
+</form>

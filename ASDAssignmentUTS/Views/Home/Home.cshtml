@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,8 @@
             <button>Search for a Song</button>
             <p></p>
             <button>View Playlists</button>
+            <p></p>
+            <a asp-controller="Account" asp-action="Login" >Login</a>
         </div>
     </main>
 

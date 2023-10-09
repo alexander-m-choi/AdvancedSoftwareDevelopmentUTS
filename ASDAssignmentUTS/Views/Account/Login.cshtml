@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post" action="@Url.Action("Login", "Account")">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required />
+    </div>
+    <input type="submit" value="Login" />
+</form>
+
+<!-- Button to navigate to the registration page -->
+<button onclick="window.location.href='@Url.Action("UserRegistration", "UserRegistration")';">
+    Register
+</button>
+    
