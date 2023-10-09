@@ -51,7 +51,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Update", "UpdateArtist", new { id = artist.id }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("View Songs", "SongManagement", new { id = artist.id}) |
                     @Html.ActionLink("Delete", "DeleteArtist", new { artist.id })
                 </td>
             </tr>
