@@ -1,0 +1,59 @@
+﻿@model List<ASDAssignmentUTS.Models.Review>
+@{
+    ViewData["Title"] = "Reviews";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+
+    <!--link rel="stylesheet" href="~/css/alexStyles.css"-->
+</head>
+<body>
+    <h1>Review List</h1>
+    <form method="post" action="/Review/CreateReview">
+        <input type="hidden" name="songId" value="@Model[0].Song_ID_FK">
+
+        <div>
+            <label for="starRating">Review Star Rating:</label>
+            <select id="starRating" name="starRating">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+            <label for="reviewText">Review Text:</label>
+            <input type="text" id="reviewText" name="reviewText" />
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+    <div>
+        <table class="table-white-text">
+            <thead>
+                <tr>
+                    <th>Review ID</th>
+                    <th>Review Star</th>
+                    <th>Review Entry</th>
+                    <th>User ID</th>
+                    <th>Song ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var review in Model)
+                {
+                    <tr>
+                        <td>@review.Review_ID</td>
+                        <td>@review.Review_Star</td>
+                        <td>@review.Review_Entry</td>
+                        <td>@review.User_ID_FK</td>
+                        <td>@review.Song_ID_FK</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
