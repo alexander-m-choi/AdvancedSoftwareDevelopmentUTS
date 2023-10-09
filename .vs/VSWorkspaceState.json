@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ASDAssignmentUTS",
+    "\\ASDAssignmentUTS\\Controllers",
+    "\\ASDAssignmentUTS\\Models",
+    "\\ASDAssignmentUTS\\Services"
   ],
+  "SelectedNode": "\\ASDAssignmentUTS\\Controllers\\AdminSongController.cs",
   "PreviewInSolutionExplorer": false
 }

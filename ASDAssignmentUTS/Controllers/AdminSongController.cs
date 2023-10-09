@@ -14,6 +14,7 @@ namespace ASDAssignmentUTS.Controllers
             if (id != null)
             {
                 songs = SongDBManager.GetSongsByArtist(id ?? 0);
+                ViewBag.ArtistId = id;
                 return View(songs);
             }
             else
