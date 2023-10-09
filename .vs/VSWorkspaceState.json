@@ -2,10 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\ASDAssignmentUTS",
+    "\\ASDAssignmentUTS\\bin",
+    "\\ASDAssignmentUTS\\bin\\Release",
     "\\ASDAssignmentUTS\\Controllers",
     "\\ASDAssignmentUTS\\Models",
-    "\\ASDAssignmentUTS\\Services"
+    "\\ASDAssignmentUTS\\obj",
+    "\\ASDAssignmentUTS\\Views",
+    "\\ASDAssignmentUTS\\Views\\Artist",
+    "\\ASDAssignmentUTS\\Views\\Home",
+    "\\ASDAssignmentUTS\\Views\\Shared"
   ],
-  "SelectedNode": "\\ASDAssignmentUTS\\Controllers\\AdminSongController.cs",
+  "SelectedNode": "\\ASDAssignmentUTS.sln",
   "PreviewInSolutionExplorer": false
 }
