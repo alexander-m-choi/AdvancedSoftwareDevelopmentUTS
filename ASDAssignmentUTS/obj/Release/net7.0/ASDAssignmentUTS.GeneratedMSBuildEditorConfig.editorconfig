@@ -9,49 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ASDAssignmentUTS
 build_property.RootNamespace = ASDAssignmentUTS
-build_property.ProjectDir = C:\Users\Aamash Qaisar\source\repos\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS\
+build_property.ProjectDir = C:\Users\chris\Source\Repos\alexander-m-choi\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Aamash Qaisar\source\repos\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS
+build_property.MSBuildProjectDirectory = C:\Users\chris\Source\Repos\alexander-m-choi\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/UserManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVzZXJNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/ArtistSearch.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/ArtistSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpc3RTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Home.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Index.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Privacy.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/Error.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewImports.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewStart.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Aamash Qaisar/source/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_Layout.cshtml]
+[C:/Users/chris/source/repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2belobot4q

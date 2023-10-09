@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ASDAssignmentUTS.Models.Song>
+
+@{
+    ViewData["Title"] = "Song Management";
+}
+
+<h1>Song Management</h1>
+
+<p>
+    <a asp-action="AddSong">Add New Song</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Artist
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var song in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => song.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => song.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => song.ArtistName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => song.genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => song.description)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "UpdateSong", new {  id = song.id }) |
+                @Html.ActionLink("Delete", "DeleteSong", new { id = song.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

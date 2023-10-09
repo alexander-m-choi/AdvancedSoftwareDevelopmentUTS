@@ -1,0 +1,60 @@
+﻿@model List<Artist>
+
+@{
+    ViewData["Title"] = "Artist Management";
+}
+
+<h1>Artist Management</h1>
+
+<p>
+    <a asp-action="AddArtist">Add Artist</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artist in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => artist.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => artist.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => artist.genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => artist.country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => artist.description)
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "UpdateArtist", new { id = artist.id }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "DeleteArtist", new { artist.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
