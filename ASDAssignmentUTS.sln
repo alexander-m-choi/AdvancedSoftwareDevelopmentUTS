@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASDAssignmentUTS", "ASDAssignmentUTS\ASDAssignmentUTS.csproj", "{62074378-A4BD-422E-AB67-6971FC354CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminSongTest", "AdminSongTest\AdminSongTest.csproj", "{9EFD0C6B-C990-4038-A8EB-8C89E1A8BE9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminSongTest", "AdminSongTest\AdminSongTest.csproj", "{9EFD0C6B-C990-4038-A8EB-8C89E1A8BE9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongSearchTest", "SongSearchTest\SongSearchTest.csproj", "{8828CC22-C55F-40DD-98CE-A7AB501C9763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9EFD0C6B-C990-4038-A8EB-8C89E1A8BE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFD0C6B-C990-4038-A8EB-8C89E1A8BE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFD0C6B-C990-4038-A8EB-8C89E1A8BE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8828CC22-C55F-40DD-98CE-A7AB501C9763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8828CC22-C55F-40DD-98CE-A7AB501C9763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8828CC22-C55F-40DD-98CE-A7AB501C9763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8828CC22-C55F-40DD-98CE-A7AB501C9763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
