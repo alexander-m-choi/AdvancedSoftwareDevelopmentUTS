@@ -19,7 +19,7 @@ namespace ASDAssignmentUTS.Services
                 cmd.Parameters.AddWithValue("@genre", artist.genre);
                 cmd.Parameters.AddWithValue("@country", artist.country);
                 cmd.Parameters.AddWithValue("@description", artist.description);
-                
+
                 cmd.ExecuteNonQuery();
                 conn.Close();
             }
@@ -49,42 +49,9 @@ namespace ASDAssignmentUTS.Services
             return songs;
         }
 
-        public static Song GetSongByName(string name)
+        public static void AddSong(Song song)
         {
-            try
-            {
-                Song song = new Song();
-                using (var connection = new SqlConnection(connectionStr))
-                {
-                    using (var command = new SqlCommand())
-                    {
-                        connection.Open();
-                        command.Connection = connection;
-                        command.CommandText = @"SELECT * FROM Song WHERE name = @name";
-                        command.Parameters.AddWithValue("@name", name);
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
 
-                            song.id = Convert.ToInt32(reader["id"]);
-                            song.name = reader["name"].ToString();
-                            song.artistId = Convert.ToInt32(reader["artist_id"]);
-                            song.genre = reader["genre"].ToString();
-                            song.description = reader["description"].ToString();
-
-                        }
-                    }
-                }
-                return song;
-            }
-            catch
-            {
-                throw new Exception("Song not found");
-            }
-} 
-
-            public static void AddSong(Song song)
-        {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
                 conn.Open();
@@ -94,15 +61,15 @@ namespace ASDAssignmentUTS.Services
                 cmd.Parameters.AddWithValue("@artist_id", song.artistId);
                 cmd.Parameters.AddWithValue("@genre", song.genre);
                 cmd.Parameters.AddWithValue("@description", song.description);
-                
+
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                
+
             }
         }
 
         //returns the Artist Name
-        public static string GetArtistName(int id)
+        public static string? GetArtistName(int id)
         {
             string artistName = "";
             try
@@ -121,11 +88,10 @@ namespace ASDAssignmentUTS.Services
                     conn.Close();
                 }
             }
-            catch (Exception e) //this is error handling in case if the artist has been deleted.
+            catch (SqlException e)
             {
-                artistName = "";
+                throw new QueryErrorException(e.Message);
             }
-            
             return artistName;
         }
 
@@ -141,7 +107,7 @@ namespace ASDAssignmentUTS.Services
                 conn.Close();
             }
         }
-        
+
         public static List<Song> GetSongsByArtist(int artistId)
         {
             List<Song> songs = new List<Song>();
@@ -220,9 +186,14 @@ namespace ASDAssignmentUTS.Services
                     return song;
                 }
             }
-            catch 
+            catch (SqlException e)
             {
-                throw new Exception("Song not found");
+                throw new QueryErrorException(e.Message);
+            }
+            catch
+            {
+                //an exception is thrown if the song is not found.
+                throw new SongNotFoundException();
             }
         }
 
@@ -247,12 +218,20 @@ namespace ASDAssignmentUTS.Services
                         artist.description = reader["description"].ToString();
                     }
                     conn.Close();
+                    if (artist.id != id)
+                    {
+                        throw new ArtistNotFoundException();
+                    }
                     return artist;
                 }
             }
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
             catch
             {
-                throw new Exception("Artist not found");
+                throw new ArtistNotFoundException();
             }
         }
 
@@ -289,6 +268,157 @@ namespace ASDAssignmentUTS.Services
                 conn.Close();
             }
         }
-    }
 
+        //used for unit testing
+        public static Artist GetArtistByName(string name)
+        {
+            try
+            {
+                Artist artist = new Artist();
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM Artist WHERE name = @name";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        artist.id = Convert.ToInt32(reader["id"]);
+                        artist.name = reader["name"].ToString();
+                        artist.genre = reader["genre"].ToString();
+                        artist.country = reader["country"].ToString();
+                        artist.description = reader["description"].ToString();
+                        //this will ensure that an exception is thrown if the artist is not found so it can be picked up during unit testing..
+
+                    }
+                    if (artist.name == "" || artist.name == null || artist.name != name)
+                    {
+                        throw new ArtistNotFoundException();
+                    }
+                    conn.Close();
+
+                }
+
+                return artist;
+            }
+            //catches the exception if there is something wrong with the SQL server.
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            catch (ArtistNotFoundException)
+            {
+                throw new ArtistNotFoundException();
+            }
+        }
+        //used for unit testing to see if the song is added.
+        public static Song GetSongByNameAndArtist(string name, int artistId)
+        {
+            try
+            {
+                Song song = new Song();
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM Song WHERE name = @name AND artist_id = @artist_id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@artist_id", artistId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        song.id = Convert.ToInt32(reader["id"]);
+                        song.name = reader["name"].ToString();
+                        song.artistId = Convert.ToInt32(reader["artist_id"]);
+                        song.genre = reader["genre"].ToString();
+                        song.description = reader["description"].ToString();
+
+                    }
+                    if (song.name == "" || song.name == null || song.name != name)
+                    {
+                        throw new SongNotFoundException();
+                    }
+                    conn.Close();
+                }
+
+                return song;
+            }
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            catch (SongNotFoundException)
+            {
+                throw new SongNotFoundException();
+            }
+        }
+
+        static public Song GetSongByName(string name)
+        {
+            try
+            {
+                Song song = new Song();
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"SELECT * FROM Song WHERE name = @name";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        song.id = Convert.ToInt32(reader["id"]);
+                        song.name = reader["name"].ToString();
+                        song.artistId = Convert.ToInt32(reader["artist_id"]);
+                        song.genre = reader["genre"].ToString();
+                        song.description = reader["description"].ToString();
+
+                    }
+                    if (song.name == "" || song.name == null || song.name != name)
+                    {
+                        throw new SongNotFoundException();
+                    }
+                    conn.Close();
+
+                }
+                return song;
+
+            }
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            catch (SongNotFoundException)
+            {
+                throw new SongNotFoundException();
+            }
+        }
+
+    }    
+    
+
+    //this is a class to throw an exception if the song or artist is not found.
+    public class SongNotFoundException : Exception
+    {
+        public SongNotFoundException() : base ()
+        {
+        }
+    }
+    public class ArtistNotFoundException : Exception
+    {
+        public ArtistNotFoundException() : base()
+        {
+        }
+    }
+    //due to SQL exception is sealed, i have to create a new exception class to throw an exception related to SQL Server.
+    public class QueryErrorException : Exception
+    {
+        public QueryErrorException(string message) : base(message)
+        {
+        }
+    }
 }

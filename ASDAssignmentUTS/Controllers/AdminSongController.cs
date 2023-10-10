@@ -8,9 +8,26 @@ namespace ASDAssignmentUTS.Controllers
     public class AdminSongController : Controller
     {
         // GET: AdminController
-        public ActionResult SongManagement()
+        public ActionResult SongManagement(int? id)
         {
-            List<Song> songs = SongDBManager.GetSongs();
+            List<Song> songs;
+            if (id != null)
+            {
+                songs = SongDBManager.GetSongsByArtist(id ?? 0);
+                ViewBag.ArtistId = id;
+                return View(songs);
+            }
+            else
+            {
+                songs = SongDBManager.GetSongs();
+            }
+             
+            return View(songs);
+        }
+
+        public ActionResult SongManagementByArtist(int id)
+        {
+            List<Song> songs = SongDBManager.GetSongsByArtist(id);
             return View(songs);
         }
 
@@ -54,13 +71,16 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
         //GET: AdminController/AddSong
-        public ActionResult AddSong()
+       
+        //adds a song that is from the artist that is selected.
+        public ActionResult AddSong(int? id)
         {
             var artists = new Artist().GetArtists();
             ViewBag.Artists = artists;
-
+            ViewBag.ArtistId = id;
             return View();
         }
+
         // POST: AdminController/AddSong
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -142,12 +162,7 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
 
-        // GET: AdminController/Delete/5
-        public ActionResult DeleteSong(int id)
-        {
-            return View();
-        }
-
+        [HttpGet]
         public ActionResult DeleteArtist(int id)
         {
             return View();
@@ -155,7 +170,6 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
@@ -170,18 +184,25 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteSong(int id, IFormCollection collection)
+        
+        public ActionResult DeleteSong(IFormCollection collection)
         {
             try
             {
-                SongDBManager.DeleteSong(id);
+                SongDBManager.DeleteSong(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(SongManagement));
             }
             catch
             {
                 return View();
             }
+        }
+
+        public ActionResult SongsByArtist(int id)
+        {
+            List<Song> songs = SongDBManager.GetSongsByArtist(id);
+            ViewBag.ArtistId = id;
+            return View(songs);
         }
     }
 }
