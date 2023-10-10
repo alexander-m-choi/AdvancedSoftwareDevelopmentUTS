@@ -170,7 +170,6 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
