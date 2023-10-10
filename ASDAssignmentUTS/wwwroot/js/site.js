@@ -6,6 +6,7 @@
 
 var clickedSongId = 0;
 var clickedArtistId = 0;
+var clickedUserId = 0;
 
 
 //this is a function to delete a selected song from the admin song management inside a table
@@ -57,6 +58,28 @@ $(document).ready(function () {
     $("#viewSongs").click(function () {
         window.location.href = "/AdminSong/SongManagement/" + clickedArtistId;
     })
+
+    //this is for the user management stuffs
+    //first, this will delete the user
+    $("#deleteUser").click(function () {
+        if (confirm("Are you sure you want to delete this user?")) {
+            $.ajax({
+                url: '/AdminUser/Delete',
+                type: 'POST',
+                data: {
+                    "id": clickedUserId
+                },
+                success: function (result) {
+                    window.location.reload();
+                }
+            })
+        }
+    })
+
+    //routes to the update user page based on clicked user
+    $("#updateUser").click(function () {
+        window.location.href = "/AdminUser/Update/" + clickedUserId;
+    });
 })
 
 //this function will listen to the click event on the table row and highlight the row
@@ -88,4 +111,16 @@ function onArtistClick(id) {
 
     });
     console.log("clicked " + clickedArtistId)
+}
+
+//this function will listen to the click event on the table row and highlight the row from the Users table
+function onUserClick(id) {
+    clickedUserId = id;
+    $("#deleteUser").prop("disabled", false);
+    $("#updateUser").prop("disabled", false);
+    $(document).ready(function () {
+        $("#userTable tr").removeClass("bg-secondary text-white");
+        $("#" + id).addClass("bg-secondary text-white");
+    });
+    console.log("clicked " + clickedUserId);
 }

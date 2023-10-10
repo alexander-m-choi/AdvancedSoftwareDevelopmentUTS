@@ -3,45 +3,50 @@
 @{
     ViewData["Title"] = "User Management";
 }
+<div class="row p-4">
+    <h1 class="center">User Management</h1>
+</div>
 
-<h1>User Management</h1>
+<div class="row">
+    <div class="col-2">
+        <a class="btn btn-primary m-3" asp-action="Create">Add User</a>
+        <button disabled class="btn btn-primary m-3" id="updateUser" >Update User</button>
+        <button disabled class="btn btn-danger m-3" id="deleteUser">Delete User</button>
+    </div>
+    
+    <div class="col-10">
+        <table class="table table-hover" id="userTable">
+            <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Username
+                    </th>
+                    <th>
+                        Email Address
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.id" onclick="onUserClick(@item.id)">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Username
-            </th>
-            <th>
-                Email Address
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.ActionLink("Update", "Update", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    
