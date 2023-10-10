@@ -100,6 +100,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ0luZm9ybWF0aW9uXFNvbmdEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SearchResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1NlYXJjaFxTZWFyY2hSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SongSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1NlYXJjaFxTb25nU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
