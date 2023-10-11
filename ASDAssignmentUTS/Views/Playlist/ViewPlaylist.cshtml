@@ -1,0 +1,14 @@
+@model ASDAssignmentUTS.Models.Playlist
+
+<h1>@Model.name</h1>
+
+<p>@Model.description</p>
+
+<h2>Songs</h2>
+
+<ul>
+    @foreach (var song in Model.Songs)
+    {
+        <li>@song.name - @song.artistId</li>
+    }
+</ul>

@@ -3,58 +3,63 @@
 @{
     ViewData["Title"] = "Artist Management";
 }
+<div class="container">
+    <div class="row p-4">
+        <h1 class="center">Artist Management</h1>
+    </div>
+    <div class="row">
+        <div class="col-2 p-1">
+            <a class="btn btn-primary m-3" asp-action="AddArtist">New Artist</a>
+            <button disabled id="updateArtist" class="btn btn-primary m-3">Update Artist</button>
+            <button disabled id="deleteArtist" class="btn btn-danger m-3">Delete Artist</button>
+            <button disabled id="viewSongs" class="btn btn-primary m-3">View Songs</button>
+        </div>
+        <div class="col-9">
+            <table class="table table-hover" id="artistTable">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Genre
+                        </th>
+                        <th>
+                            Country
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var artist in Model)
+                    {
+                        <tr id="@Html.DisplayFor(modelItem => artist.id)" onclick="onArtistClick(@Html.DisplayFor(modelItem => artist.id));">
+                            <td>
+                                @Html.DisplayFor(modelItem => artist.id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => artist.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => artist.genre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => artist.country)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => artist.description)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
 
-<h1>Artist Management</h1>
+    </div>
+</div>
 
-<p>
-    <a asp-action="AddArtist">Add Artist</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-               id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Genre
-            </th>
-            <th>
-                Country
-            </th>
-            <th>
-                Description
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var artist in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => artist.id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => artist.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => artist.genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => artist.country)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => artist.description)
-                </td>
-                <td>
-                    @Html.ActionLink("Update", "UpdateArtist", new { id = artist.id }) |
-                    @Html.ActionLink("View Songs", "SongManagement", new { id = artist.id}) |
-                    @Html.ActionLink("Delete", "DeleteArtist", new { artist.id })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
