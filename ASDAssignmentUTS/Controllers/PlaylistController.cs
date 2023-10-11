@@ -89,9 +89,9 @@ namespace ASDAssignmentUTS.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult ViewPlaylist(int id)
+        public IActionResult ViewPlaylist(int id)
         {
-            Playlist playlist = PlaylistDBManager.GetPlaylistById(id);
+            var playlist = PlaylistDBManager.GetPlaylistById(id);
             return View(playlist);
         }
     }
