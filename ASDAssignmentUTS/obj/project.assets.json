@@ -1492,7 +1492,7 @@
           "System.Text.Json": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {
+          "lib/net7.0/_._": {
             "related": ".xml"
           }
         },
@@ -1951,7 +1951,7 @@
           "System.CodeDom": "4.4.0"
         },
         "compile": {
-          "lib/netstandard2.0/Mono.TextTemplating.dll": {}
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
@@ -2368,7 +2368,7 @@
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.CodeDom.dll": {
+          "ref/netstandard2.0/_._": {
             "related": ".xml"
           }
         },
@@ -11502,11 +11502,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+      "projectUniqueName": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
       "projectName": "ASDAssignmentUTS",
-      "projectPath": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+      "projectPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
       "packagesPath": "/Users/lavmore/.nuget/packages/",
-      "outputPath": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
+      "outputPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/lavmore/.nuget/NuGet/NuGet.Config"

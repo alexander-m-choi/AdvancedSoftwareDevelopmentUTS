@@ -25,7 +25,14 @@
             <p></p>
             <button>View Playlists</button>
             <p></p>
-            <a asp-controller="Account" asp-action="Login" >Login</a>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <a asp-controller="Account" asp-action="Settings" class="btn btn-primary">Settings</a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+            }
         </div>
     </main>
 

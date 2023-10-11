@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {}
+    "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {}
   },
   "projects": {
-    "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {
+    "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+        "projectUniqueName": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
         "projectName": "ASDAssignmentUTS",
-        "projectPath": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+        "projectPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
         "packagesPath": "/Users/lavmore/.nuget/packages/",
-        "outputPath": "/Users/lavmore/workspaces/asdws/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
+        "outputPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/lavmore/.nuget/NuGet/NuGet.Config"
@@ -50,6 +50,8 @@
               "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.11, )"
             },

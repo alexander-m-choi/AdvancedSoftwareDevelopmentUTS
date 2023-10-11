@@ -1,8 +1,24 @@
 @model ASDAssignmentUTS.Models.RegisterModel
 
+@{
+    var successMessage = ViewBag.SuccessMessage as string;
+    var errorMessage = ViewBag.ErrorMessage as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success">@successMessage</div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+
 <h2>Register</h2>
 
-<form method="post" action="/Account/Register">
+<form method="post" asp-controller="Account" asp-action="Register">
+
     <div>
         <label for="Username">Username:</label>
         <input type="text" id="Username" name="Username" required />
@@ -17,3 +33,8 @@
     </div>
     <button type="submit">Register</button>
 </form>
+
+<!-- Link back to Login page -->
+<div>
+    <p>Already have an account? <a asp-controller="Account" asp-action="Login">Log in here</a>.</p>
+</div>
