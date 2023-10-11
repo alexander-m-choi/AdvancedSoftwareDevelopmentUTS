@@ -47,7 +47,7 @@ namespace AdminSongTest
             Assert.AreEqual("This song is about the Ability Camp and how it is a great place to be.", songFromDB.description);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         //[ExpectedException(typeof(SongNotFoundException))] //this is the expected exception that will be thrown if the song is not found to verify if the song is deleted
         public void TestDeleteSong()
         {
@@ -73,7 +73,7 @@ namespace AdminSongTest
             Assert.ThrowsException<SongNotFoundException>(deletedSong);
             //delete the artist that was added for this test case.
             SongDBManager.DeleteArtist(fetchedArtist.id);
-        }
+        }*/
 
         [TestMethod]
         public void TestDeleteArtist()

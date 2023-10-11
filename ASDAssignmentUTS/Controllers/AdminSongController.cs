@@ -162,12 +162,7 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
 
-        // GET: AdminController/Delete/5
-        public ActionResult DeleteSong(int id)
-        {
-            return View();
-        }
-
+        [HttpGet]
         public ActionResult DeleteArtist(int id)
         {
             return View();
@@ -175,7 +170,6 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
@@ -190,12 +184,12 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteSong(int id, IFormCollection collection)
+        
+        public ActionResult DeleteSong(IFormCollection collection)
         {
             try
             {
-                SongDBManager.DeleteSong(id);
+                SongDBManager.DeleteSong(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(SongManagement));
             }
             catch

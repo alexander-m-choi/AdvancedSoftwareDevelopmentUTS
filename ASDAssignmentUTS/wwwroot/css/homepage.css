@@ -22,7 +22,7 @@ font-family: 'Gill Sans';
 
 
 button {
-    font-family: Gill Sans;
+    font-family: 'Gill Sans';
     text-align: center;
     border: 5px solid black;
     background-color: white;
@@ -32,6 +32,7 @@ button {
     font-size: 20px;
     padding: 10px 59px;
     margin-top: 50px;
+    border-radius: 40px;
 }
 
 button.center {
