@@ -9,13 +9,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
 
-    <!--link rel="stylesheet" href="~/css/alexStyles.css"-->
+    <link rel="stylesheet" href="~/css/alexStyles.css">
 </head>
 <body>
     <h1>Review List</h1>
     <form method="post" action="/Review/CreateReview">
         <input type="hidden" name="songId" value="@Model[0].Song_ID_FK">
-
         <div>
             <label for="starRating">Review Star Rating:</label>
             <select id="starRating" name="starRating">
@@ -29,6 +28,10 @@
             <input type="submit" value="Submit" />
         </div>
     </form>
+
+
+
+    <h1></h1>
     <div>
         <table class="table-white-text">
             <thead>
