@@ -1,62 +1,69 @@
-﻿@model List<ASDAssignmentUTS.Models.Review>
+﻿@model ASDAssignmentUTS.Models.Song
 @{
-    ViewData["Title"] = "Reviews";
+    ViewData["Title"] = "Review";
 }
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
-
     <link rel="stylesheet" href="~/css/alexStyles.css">
 </head>
 <body>
     <h1>Review List</h1>
-    <form method="post" action="/Review/CreateReview">
-        <input type="hidden" name="songId" value="@Model[0].Song_ID_FK">
+    <p>Song ID: @Model.id</p>
+    
+    <h2>Song Details</h2>
+    <p><strong>Name:</strong> @Model.name</p>
+    <p><strong>Artist ID:</strong> @Model.artistId</p>
+    <p><strong>Genre:</strong> @Model.genre</p>
+    <p><strong>Description:</strong> @Model.description</p>
+
+    <h2>Add a Review</h2>
+    <form method="post" action="/Review/AddReview">
         <div>
-            <label for="starRating">Review Star Rating:</label>
-            <select id="starRating" name="starRating">
+            <label for="stars">Stars:</label>
+            <select id="stars" name="stars" required>
                 @for (int i = 1; i <= 5; i++)
                 {
                     <option value="@i">@i</option>
                 }
             </select>
-            <label for="reviewText">Review Text:</label>
-            <input type="text" id="reviewText" name="reviewText" />
-            <input type="submit" value="Submit" />
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5" style="width: 100%;" required></textarea>
+        </div>
+        <div>
+            <input type="hidden" name="songId" value="@Model.id">
+            <button type="submit">Submit Review</button>
         </div>
     </form>
 
-
-
-    <h1></h1>
-    <div>
-        <table class="table-white-text">
-            <thead>
+    <h2>Reviews</h2>
+    <table class="table-white-text">
+        <thead>
+            <tr>
+                <th>Review ID</th>
+                <th>Rating</th>
+                <th>Review Entry</th>
+                <th>User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in ViewData["Reviews"] as List<ASDAssignmentUTS.Models.Review>)
+            {
                 <tr>
-                    <th>Review ID</th>
-                    <th>Review Star</th>
-                    <th>Review Entry</th>
-                    <th>User ID</th>
-                    <th>Song ID</th>
+                    <td>@review.Review_ID</td>
+                    <td>@review.Review_Star</td>
+                    <td>@review.Review_Entry</td>
+                    <td>@review.User_ID_FK</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var review in Model)
-                {
-                    <tr>
-                        <td>@review.Review_ID</td>
-                        <td>@review.Review_Star</td>
-                        <td>@review.Review_Entry</td>
-                        <td>@review.User_ID_FK</td>
-                        <td>@review.Song_ID_FK</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </body>
 </html>
 

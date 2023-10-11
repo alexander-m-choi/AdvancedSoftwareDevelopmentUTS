@@ -10,8 +10,8 @@ namespace ASDAssignmentUTS.Controllers
         {
             //Update the ID to be able to be parsed in from song search :))
 
-            id = 1;
-            Song song = SongDBManager.GetSongById(1);
+            id = 2;
+            Song song = SongDBManager.GetSongById(2);
             return View(song);
         }
 

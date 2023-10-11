@@ -101,6 +101,30 @@ namespace ASDAssignmentUTS.Services
             }
             return reviews;
         }
+        public static Review GetReviewById(int reviewId)
+        {
+            Review review = null;
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"SELECT * FROM reviewAlex WHERE Review_ID = @Review_ID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Review_ID", reviewId);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    review = new Review();
+                    review.Review_ID = Convert.ToInt32(reader["Review_ID"]);
+                    review.Review_Star = Convert.ToInt32(reader["Review_Star"]);
+                    review.Review_Entry = reader["Review_Entry"].ToString();
+                    review.User_ID_FK = Convert.ToInt32(reader["User_ID_FK"]);
+                    review.Song_ID_FK = Convert.ToInt32(reader["Song_ID_FK"]);
+                }
+                conn.Close();
+            }
+            return review;
+        }
+
     }
 }
 
