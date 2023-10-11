@@ -32,10 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXERlbGV0ZUFydGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/DeleteSong.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXERlbGV0ZVNvbmcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/SongManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFNvbmdNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +78,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/AddPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcQWRkUGxheWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/DeletePlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcRGVsZXRlUGxheWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/EditPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcRWRpdFBsYXlsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/PlaylistManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcUGxheWxpc3RNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/ViewPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcVmlld1BsYXlsaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Review/DisplayReviews.cshtml]
