@@ -1,0 +1,18 @@
+@model ASDAssignmentUTS.Models.Playlist
+
+<h1>Update Playlist Details</h1>
+
+<form method="post" asp-action="UpdatePlaylist" asp-route-id="@Model.id">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" value="@Model.name" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" rows="3"
+            required>@Model.description</textarea>
+    </div>
+    <input type="hidden" name="ownerId" value="@Model.ownerId" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("ViewPlaylist", "Playlist", new { id = Model.id })" class="btn btn-secondary">Cancel</a>
+</form>
