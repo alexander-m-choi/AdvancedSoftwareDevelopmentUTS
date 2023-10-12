@@ -1,0 +1,23 @@
+<button onclick="confirmDelete()">Delete Playlist</button>
+
+<script>
+    function confirmDelete() {
+        if (confirm("Are you sure you want to delete the current playlist?")) {
+            // User clicked "OK", delete playlist
+            var playlistId = @Model.Id; // Get the ID of the current playlist from the model
+            $.ajax({
+                type: "POST",
+                url: "/Playlist/DeletePlaylist/" + playlistId,
+                success: function () {
+                    // Redirect to the home page
+                    window.location.href = "PlaylistManagement.cshtml";
+                },
+                error: function () {
+                    alert("An error occurred while deleting the playlist.");
+                }
+            });
+        } else {
+            // User clicked "Cancel", do nothing
+        }
+    }
+</script>

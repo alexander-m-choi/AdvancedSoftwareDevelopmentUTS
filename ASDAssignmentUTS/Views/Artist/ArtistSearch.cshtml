@@ -1,0 +1,54 @@
+﻿@model List<Artist>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Artists</title>
+    <style>
+        tr.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="filter" placeholder="Filter by name">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        @foreach (var artist in Model)
+        {
+            <tr>
+                <td>@artist.id</td>
+                <td>@artist.name</td>
+                <td><a href="@Url.Action("ArtistInformation", "ArtistInformation", new { artistid = artist.id })"
+                        class="info-button">Information</a></td>
+            </tr>
+        }
+    </table>
+    <script>
+        const input = document.querySelector('#filter');
+        const rows = document.querySelectorAll('tr');
+
+        input.addEventListener('input', () => {
+            const filter = input.value.toLowerCase();
+
+            rows.forEach(row => {
+                if (row.querySelector('th')) return;
+
+                const id = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+                const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+
+
+                const matches = [id, name].some(data => data.includes(filter));
+
+                row.classList.toggle('hidden', !matches);
+            });
+        });
+    </script>
+</body>
+
+</html>

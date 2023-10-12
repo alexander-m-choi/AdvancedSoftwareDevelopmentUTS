@@ -1,0 +1,27 @@
+﻿@model ASDAssignmentUTS.Models.Song
+
+ 
+
+@{
+    ViewData["Title"] = "Song Search";
+}
+
+<h1>Song Search</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchResult">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

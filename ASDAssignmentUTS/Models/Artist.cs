@@ -12,33 +12,18 @@ public class Artist
     public string country { get; set; }
     public string description { get; set; }
 
-    public List<Artist> GetArtists()
+    public Artist(int id, string name, string genre, string country, string description)
     {
-        string connectionString = DBConnector.GetConnectionString();
-        List<Artist> artists = new List<Artist>();
-        using (var connection = new SqlConnection(connectionString))
-        {
-            using (var command = new SqlCommand())
-            {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "SELECT * FROM Artist";
-                var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Artist artist = new Artist()
-                    {
-                        id = reader.GetInt32(0),
-                        name = reader.GetString(1),
-                        genre = reader.GetString(2),
-                        country = reader.GetString(3),
-                        description = reader.GetString(4)
-                    };
-                    artists.Add(artist);
-                }
-            }
-        }
-        return artists;
+        this.id = id;
+        this.name = name;
+        this.genre = genre;
+        this.country = country;
+        this.description = description;
+    }
+
+    public Artist()
+    {
 
     }
+
 }

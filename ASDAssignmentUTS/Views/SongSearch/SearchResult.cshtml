@@ -1,0 +1,58 @@
+﻿@model ASDAssignmentUTS.Models.Song
+
+
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                id @* @Html.DisplayNameFor(model => model.id) *@
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Artist
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.id)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => Model.name)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => Model.ArtistName)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => Model.genre)
+            </td>
+            <td>
+            @Html.DisplayFor(modelItem => Model.description)
+            </td>
+            <td>
+            </td>   
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

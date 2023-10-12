@@ -8,15 +8,32 @@ namespace ASDAssignmentUTS.Controllers
     public class AdminSongController : Controller
     {
         // GET: AdminController
-        public ActionResult SongManagement()
+        public ActionResult SongManagement(int? id)
         {
-            List<Song> songs = SongDBManager.GetSongs();
+            List<Song> songs;
+            if (id != null)
+            {
+                songs = SongDBManager.GetSongsByArtist(id ?? 0);
+                ViewBag.ArtistId = id;
+                return View(songs);
+            }
+            else
+            {
+                songs = SongDBManager.GetSongs();
+            }
+
+            return View(songs);
+        }
+
+        public ActionResult SongManagementByArtist(int id)
+        {
+            List<Song> songs = SongDBManager.GetSongsByArtist(id);
             return View(songs);
         }
 
         public ActionResult ArtistManagement()
         {
-            var artists = new Artist().GetArtists();
+            List<Artist> artists = ArtistDBManager.GetArtists();
             return View(artists);
         }
 
@@ -54,13 +71,16 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
         //GET: AdminController/AddSong
-        public ActionResult AddSong()
-        {
-            var artists = new Artist().GetArtists();
-            ViewBag.Artists = artists;
 
+        //adds a song that is from the artist that is selected.
+        public ActionResult AddSong(int? id)
+        {
+            List<Artist> artists = ArtistDBManager.GetArtists();
+            ViewBag.Artists = artists;
+            ViewBag.ArtistId = id;
             return View();
         }
+
         // POST: AdminController/AddSong
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,10 +109,15 @@ namespace ASDAssignmentUTS.Controllers
             var artist = SongDBManager.GetArtistById(id);
             return View(artist);
         }
-
+        [HttpGet]
         public ActionResult UpdateSong(int id)
         {
             var song = SongDBManager.GetSongById(id);
+            Artist artist = new Artist();
+            var allArtist = ArtistDBManager.GetArtists();
+            //this will list all the artists in the view bag.
+            ViewBag.Artists = allArtist;
+            ViewBag.artistId = song.artistId;
             return View(song);
         }
 
@@ -142,24 +167,13 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
 
-        // GET: AdminController/Delete/5
-        public ActionResult DeleteSong(int id)
-        {
-            return View();
-        }
-
-        public ActionResult DeleteArtist(int id)
-        {
-            return View();
-        }
-
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
-            {   SongDBManager.DeleteArtist(id);
+            {
+                SongDBManager.DeleteArtist(id);
                 return RedirectToAction(nameof(ArtistManagement));
             }
             catch
@@ -170,18 +184,25 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteSong(int id, IFormCollection collection)
+
+        public ActionResult DeleteSong(IFormCollection collection)
         {
             try
             {
-                SongDBManager.DeleteSong(id);
+                SongDBManager.DeleteSong(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(SongManagement));
             }
             catch
             {
                 return View();
             }
+        }
+
+        public ActionResult SongsByArtist(int id)
+        {
+            List<Song> songs = SongDBManager.GetSongsByArtist(id);
+            ViewBag.ArtistId = id;
+            return View(songs);
         }
     }
 }

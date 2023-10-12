@@ -1,0 +1,79 @@
+@model IEnumerable<ASDAssignmentUTS.Models.Playlist>
+
+@{
+    ViewData["Title"] = "Playlist";
+}
+
+<h1>Playlist</h1>
+
+<p>
+    <a asp-action="AddPlaylist">Add Playlist</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ownerId)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ownerId)
+                </td>
+                <td>
+                    <button class="btn btn-primary" onclick="confirmView(@item.id)">View</button>
+                    <a asp-action="UpdatePlaylist" asp-route-id="@item.id" class="btn btn-secondary">Edit Info</a>
+                    <button class="btn btn-danger" onclick="confirmDelete(@item.id)">Delete</button>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm("Are you sure you want to delete the selected playlist?")) {
+            $.ajax({
+                type: "POST",
+                url: "/Playlist/DeletePlaylist/" + id,
+                success: function () {
+                    // Remove the deleted playlist from the table
+                    $("tr[data-id='" + id + "']").remove();
+                    location.reload();
+                },
+                error: function () {
+                    alert("An error occurred while deleting the playlist.");
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    function confirmView(id) {
+        window.location.href = "/Playlist/ViewPlaylist/" + id;
+    }
+</script>

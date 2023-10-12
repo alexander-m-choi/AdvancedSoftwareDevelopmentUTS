@@ -32,14 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Tb25nL0FydGlzdE1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/DeleteArtist.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Tb25nL0RlbGV0ZUFydGlzdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/DeleteSong.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Tb25nL0RlbGV0ZVNvbmcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/SongManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Tb25nL1NvbmdNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -68,8 +60,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5Vc2VyL1VzZXJNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L0luZGV4LmNzaHRtbA==
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistInformation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L0FydGlzdEluZm9ybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXJ0aXN0L0FydGlzdFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/AdminMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbk1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/ArtistSearch.cshtml]
@@ -88,12 +88,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/AddPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvQWRkUGxheWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/DeletePlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvRGVsZXRlUGxheWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/EditPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvRWRpdFBsYXlsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/PlaylistManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvUGxheWxpc3RNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/UpdatePlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvVXBkYXRlUGxheWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/ViewPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGxheWxpc3QvVmlld1BsYXlsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Review/DisplayReviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmV2aWV3L0Rpc3BsYXlSZXZpZXdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongInformation/SongDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU29uZ0luZm9ybWF0aW9uL1NvbmdEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SearchResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU29uZ1NlYXJjaC9TZWFyY2hSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SongSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU29uZ1NlYXJjaC9Tb25nU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/UserRegistration/UserRegistration.cshtml]
