@@ -89,11 +89,11 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminUserController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(IFormCollection collection)
         {
             try
-            {   UserDBManager.DeleteUser(id);
+            {
+                UserDBManager.DeleteUser(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(UserManagement));
             }
             catch

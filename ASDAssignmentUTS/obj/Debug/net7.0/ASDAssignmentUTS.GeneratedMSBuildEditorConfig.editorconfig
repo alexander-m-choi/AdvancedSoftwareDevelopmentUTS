@@ -56,8 +56,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVzZXJNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEluZGV4LmNzaHRtbA==
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistInformation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEFydGlzdEluZm9ybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEFydGlzdFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/AdminMenu.cshtml]
@@ -94,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/PlaylistManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcUGxheWxpc3RNYW5hZ2VtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/UpdatePlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcVXBkYXRlUGxheWxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/ViewPlaylist.cshtml]
