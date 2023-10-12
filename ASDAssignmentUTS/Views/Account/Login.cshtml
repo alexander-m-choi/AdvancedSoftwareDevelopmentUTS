@@ -1,0 +1,25 @@
+@model ASDAssignmentUTS.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Login" asp-controller="Account" method="post">
+    <div>
+        <label asp-for="Username">Username:</label>
+        <input asp-for="Username" required />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div>
+        <label asp-for="Password">Password:</label>
+        <input type="password" asp-for="Password" required />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <input type="submit" value="Login" />
+</form>
+
+<!-- Button to navigate to the registration page -->
+<button onclick="window.location.href='@Url.Action("UserRegistration", "UserRegistration")';">
+    Register
+</button>
