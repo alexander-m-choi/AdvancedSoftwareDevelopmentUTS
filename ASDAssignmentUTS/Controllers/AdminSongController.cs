@@ -21,7 +21,7 @@ namespace ASDAssignmentUTS.Controllers
             {
                 songs = SongDBManager.GetSongs();
             }
-             
+
             return View(songs);
         }
 
@@ -33,7 +33,7 @@ namespace ASDAssignmentUTS.Controllers
 
         public ActionResult ArtistManagement()
         {
-            var artists = new Artist().GetArtists();
+            List<Artist> artists = ArtistDBManager.GetArtists();
             return View(artists);
         }
 
@@ -71,11 +71,11 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
         //GET: AdminController/AddSong
-       
+
         //adds a song that is from the artist that is selected.
         public ActionResult AddSong(int? id)
         {
-            var artists = new Artist().GetArtists();
+            List<Artist> artists = ArtistDBManager.GetArtists();
             ViewBag.Artists = artists;
             ViewBag.ArtistId = id;
             return View();
@@ -173,7 +173,8 @@ namespace ASDAssignmentUTS.Controllers
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
-            {   SongDBManager.DeleteArtist(id);
+            {
+                SongDBManager.DeleteArtist(id);
                 return RedirectToAction(nameof(ArtistManagement));
             }
             catch
@@ -184,7 +185,7 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
-        
+
         public ActionResult DeleteSong(IFormCollection collection)
         {
             try

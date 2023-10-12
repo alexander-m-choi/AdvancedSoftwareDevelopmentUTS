@@ -1,0 +1,19 @@
+@model Artist
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>@Model.name</title>
+</head>
+
+<body>
+    <h1>@Model.name</h1>
+    <p><strong>Genre:</strong> @Model.genre</p>
+    <p><strong>Country:</strong> @Model.country</p>
+    <p><strong>Description:</strong> @Model.description</p>
+
+    <a asp-action="ArtistSearch" asp-controller="ArtistSearch" class="btn btn-primary">Back to Search</a>
+</body>
+
+</html>
