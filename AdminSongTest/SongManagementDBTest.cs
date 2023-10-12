@@ -48,7 +48,7 @@ namespace AdminSongTest
         }
 
         /*[TestMethod]
-        //[ExpectedException(typeof(SongNotFoundException))] //this is the expected exception that will be thrown if the song is not found to verify if the song is deleted
+        [ExpectedException(typeof(SongNotFoundException))] //this is the expected exception that will be thrown if the song is not found to verify if the song is deleted
         public void TestDeleteSong()
         {
             //this will add a new artist to specifically test deleting a song.
