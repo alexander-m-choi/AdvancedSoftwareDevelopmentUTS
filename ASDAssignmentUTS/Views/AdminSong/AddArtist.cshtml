@@ -4,9 +4,8 @@
     ViewData["Title"] = "Add Artist";
 }
 
-<h1>AddArtist</h1>
+<h1>Add Artist</h1>
 
-<h4>Artist</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="description" class="control-label">Description</label>
-                <input asp-for="description" class="form-control" />
+                <textarea asp-for="description" class="form-control" rows="3"></textarea>
                 <span asp-validation-for="description" class="text-danger"></span>
             </div>
             <div class="form-group">
