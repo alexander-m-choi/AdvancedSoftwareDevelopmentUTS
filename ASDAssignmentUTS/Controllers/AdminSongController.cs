@@ -114,7 +114,7 @@ namespace ASDAssignmentUTS.Controllers
         {
             var song = SongDBManager.GetSongById(id);
             Artist artist = new Artist();
-            var allArtist = artist.GetArtists();
+            var allArtist = ArtistDBManager.GetArtists();
             //this will list all the artists in the view bag.
             ViewBag.Artists = allArtist;
             ViewBag.artistId = song.artistId;
