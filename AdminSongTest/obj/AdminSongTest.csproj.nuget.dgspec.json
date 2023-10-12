@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj": {}
+    "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj": {
+    "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
+        "projectUniqueName": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
         "projectName": "AdminSongTest",
-        "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\obj\\",
+        "projectPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
-                "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
+              "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+                "projectPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
               }
             }
           }
@@ -77,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+    "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
+        "projectUniqueName": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
         "projectName": "ASDAssignmentUTS",
-        "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\",
+        "projectPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -145,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
