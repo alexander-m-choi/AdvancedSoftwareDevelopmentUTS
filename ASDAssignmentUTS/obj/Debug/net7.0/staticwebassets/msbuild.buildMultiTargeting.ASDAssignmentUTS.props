@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../build/ASDAssignmentUTS.props" />
+  <Import Project="..\build\ASDAssignmentUTS.props" />
 </Project>
