@@ -14,38 +14,49 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
+                <label asp-for="name" class="control-label">Name</label>
                 <input asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="artistId" class="control-label"></label>
-                <input asp-for="artistId" class="form-control" />
-                <span asp-validation-for="artistId" class="text-danger"></span>
+                <label asp-for="artistId" class="control-label">Artist</label>
+                <select asp-for="artistId" class="form-control">
+                    @foreach (var artist in ViewBag.artists)
+                    {
+                        if (artist.id == ViewBag.artistId)
+                        {
+                            <option value="@artist.id" selected>@artist.name</option>
+                        }
+                        else
+                        {
+                            <option value="@artist.id">@artist.name</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="ArtistName" class="text-danger"></span>
             </div>
+           
+           
             <div class="form-group">
-                <label asp-for="genre" class="control-label"></label>
+                <label asp-for="genre" class="control-label">Genre</label>
                 <input asp-for="genre" class="form-control" />
                 <span asp-validation-for="genre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="description" class="control-label"></label>
-                <input asp-for="description" class="form-control" />
+                <label asp-for="description" class="control-label">Description</label>
+                <textarea asp-for="description" class="form-control" rows="3"></textarea>
                 <span asp-validation-for="description" class="text-danger"></span>
             </div>
+           
             <div class="form-group">
-                <label asp-for="ArtistName" class="control-label"></label>
-                <input asp-for="ArtistName" class="form-control" />
-                <span asp-validation-for="ArtistName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
+                <input type="submit" value="Update Song" class="btn btn-primary m-2" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    
 </div>
 
