@@ -84,5 +84,21 @@ namespace ASDAssignmentUTS.Controllers
             var playlist = PlaylistDBManager.GetPlaylistById(id);
             return View(playlist);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteSongFromPlaylist(int playlistId, int songId)
+        {
+            try
+            {
+                Debug.WriteLine($"Deleting song {songId} from playlist {playlistId}.");
+                PlaylistDBManager.RemoveSongFromPlaylist(playlistId, songId);
+                return RedirectToAction("ViewPlaylist", new { id = playlistId });
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
