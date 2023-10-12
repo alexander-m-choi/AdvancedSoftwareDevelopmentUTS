@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/RowanTests.test/RowanTests.test.csproj": {}
+    "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj": {}
   },
   "projects": {
-    "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {
+    "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
-        "projectName": "ASDAssignmentUTS",
-        "projectPath": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
-        "packagesPath": "/Users/rowan/.nuget/packages/",
-        "outputPath": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
+        "projectUniqueName": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj",
+        "projectName": "RowanTests.test",
+        "projectPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj",
+        "packagesPath": "C:\\Users\\rowan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/rowan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\rowan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,96 +40,21 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[7.0.9, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.1.23463.5/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/RowanTests.test/RowanTests.test.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/RowanTests.test/RowanTests.test.csproj",
-        "projectName": "RowanTests.test",
-        "projectPath": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/RowanTests.test/RowanTests.test.csproj",
-        "packagesPath": "/Users/rowan/.nuget/packages/",
-        "outputPath": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/RowanTests.test/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/rowan/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj": {
-                "projectPath": "/Users/rowan/Documents/Visual Studio Code/repos/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[3.0.4, )"
+              "version": "[2.2.10, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[3.0.4, )"
+              "version": "[2.2.10, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.6.0, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.20.69, )"
+              "version": "[17.7.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -147,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.1.23463.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
