@@ -167,12 +167,6 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult DeleteArtist(int id)
-        {
-            return View();
-        }
-
         // POST: AdminController/Delete/5
         [HttpPost]
         public ActionResult DeleteArtist(int id, IFormCollection collection)

@@ -51,14 +51,11 @@
                 <span asp-validation-for="description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
+                <input type="submit" value="Add Song" class="btn btn-primary m-2" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

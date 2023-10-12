@@ -3,11 +3,34 @@
     ViewData["Title"] = "Admin Menu";
 }
 
-<h1>Admin Menu</h1>
 
-<div>
-    <a asp-controller="AdminUser" asp-action="UserManagement">User Management</a>
-    <a asp-controller="AdminSong" asp-action="SongManagement">Song Management</a>
-    <a asp-controller="AdminSong" asp-action="ArtistManagement">Artist Management</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <title>HomePage</title>
+</head>
+
+<body>
+    <main>
+        <h1>Admin Menu</h1>
+        <br /> <br /> <br />
+        <h1>Hi Andrew!</h1>
+        <p>What do you want to mange?</p>
+        <div class="intro">
+            <button><a class="nav-link text-dark" asp-controller="AdminUser" asp-action="UserManagement">User Management</a></button>
+            <p></p>
+            <button><a class="nav-link text-dark" asp-controller="AdminSong" asp-action="SongManagement">Song Management</a></button>
+            <p></p>
+            <button><a class="nav-link text-dark" asp-controller="AdminSong" asp-action="ArtistManagement">Artist Management</a></button>
+        </div>
+    </main>
+
+</body>
+
+</html>
 
