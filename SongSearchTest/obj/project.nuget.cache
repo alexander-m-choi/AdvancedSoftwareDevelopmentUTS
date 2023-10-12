@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/xS/hI1+eu5oltTbCo3R+p2CXrYKRsnJNj63HbM0joEfnXL6gMk+6p94Wf1qiQwzwvWR2ZLVbsGxvChR3x/fgA==",
+  "dgSpecHash": "LbNY2oZpR/LxS0D36f9JGiAnrl7gJLbYuIfgXqhSJ64YUPbHaHljWkOi3HGbW6txWwbk1EQfjIbZeEwvQTmO4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
+  "projectFilePath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chris\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

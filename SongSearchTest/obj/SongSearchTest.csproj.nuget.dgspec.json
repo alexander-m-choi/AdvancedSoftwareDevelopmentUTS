@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj": {}
+    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj": {}
   },
   "projects": {
     "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
@@ -11,7 +11,7 @@
         "projectName": "ASDAssignmentUTS",
         "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\",
+        "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj": {
+    "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
         "projectName": "SongSearchTest",
-        "projectPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
+        "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\SongSearchTest.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\obj\\",
+        "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\SongSearchTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -96,8 +96,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
-                "projectPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
+              "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+                "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
               }
             }
           }

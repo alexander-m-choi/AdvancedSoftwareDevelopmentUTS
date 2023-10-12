@@ -11062,11 +11062,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
       "projectName": "AdminSongTest",
-      "projectPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
+      "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\AdminSongTest.csproj",
       "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\obj\\",
+      "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\AdminSongTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11083,8 +11083,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
-              "projectPath": "C:\\Users\\chris\\source\\repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
+            "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+              "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
             }
           }
         }
