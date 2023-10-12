@@ -4,6 +4,9 @@
 
 <p>@Model.description</p>
 
+<a href="@Url.Action("UpdatePlaylist", "Playlist", new { id = Model.id })" class="btn btn-primary">Update Playlist
+    Details</a>
+
 <h2>Songs</h2>
 
 <ul>
@@ -12,3 +15,5 @@
         <li>@song.name - @song.artistId</li>
     }
 </ul>
+
+<a href="@Url.Action("PlaylistManagement", "Playlist")" class="btn btn-secondary">Back to Playlist Management</a>

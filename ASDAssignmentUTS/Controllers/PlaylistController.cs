@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ASDAssignmentUTS.Models;
+using System.Diagnostics;
 
 namespace ASDAssignmentUTS.Controllers
 {
@@ -39,31 +40,20 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         // GET: PlaylistController/Edit/5
-        public ActionResult Update(int id)
+        public IActionResult UpdatePlaylist(int id)
         {
             Playlist playlist = PlaylistDBManager.GetPlaylistById(id);
             return View(playlist);
         }
 
-        // POST: PlaylistController/Edit/5
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(int id, IFormCollection collection)
+        public ActionResult UpdatePlaylist(int id, Playlist playlist)
         {
             try
             {
-                //creates a new playlist object instance.
-                Playlist playlist = new Playlist
-                (
-                    int.Parse(collection["id"]),
-                    collection["name"],
-                    collection["description"],
-                    int.Parse(collection["ownerId"])
-                );
-                //updates the playlist in the database.
                 PlaylistDBManager.UpdatePlaylist(playlist);
-                return RedirectToAction(nameof(PlaylistManagement));
+                return RedirectToAction("ViewPlaylist", new { id = playlist.id });
             }
             catch
             {
@@ -93,6 +83,22 @@ namespace ASDAssignmentUTS.Controllers
         {
             var playlist = PlaylistDBManager.GetPlaylistById(id);
             return View(playlist);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteSongFromPlaylist(int playlistId, int songId)
+        {
+            try
+            {
+                Debug.WriteLine($"Deleting song {songId} from playlist {playlistId}.");
+                PlaylistDBManager.RemoveSongFromPlaylist(playlistId, songId);
+                return RedirectToAction("ViewPlaylist", new { id = playlistId });
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

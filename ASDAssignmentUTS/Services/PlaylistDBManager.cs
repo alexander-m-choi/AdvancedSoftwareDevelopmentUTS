@@ -2,6 +2,7 @@ using ASDAssignmentUTS.Models;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
 
 namespace ASDAssignmentUTS.Services;
 public static class PlaylistDBManager
@@ -164,5 +165,24 @@ public static class PlaylistDBManager
             }
         }
         return playlist;
+    }
+    public static void RemoveSongFromPlaylist(int playlistID, int songID)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            // Construct the SQL query to delete the row from the SongToPlaylist table
+            string query = "DELETE FROM SongToPlaylist WHERE playlistID = @playlistID AND songID = @songID";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                // Add the parameters to the command
+                command.Parameters.AddWithValue("@playlistID", playlistID);
+                command.Parameters.AddWithValue("@songID", songID);
+
+                // Execute the command
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
