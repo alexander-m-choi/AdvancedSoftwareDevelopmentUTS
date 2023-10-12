@@ -11502,11 +11502,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+      "projectUniqueName": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
       "projectName": "ASDAssignmentUTS",
-      "projectPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+      "projectPath": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
       "packagesPath": "/Users/lavmore/.nuget/packages/",
-      "outputPath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
+      "outputPath": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/lavmore/.nuget/NuGet/NuGet.Config"

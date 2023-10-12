@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ASDAssignmentUTS.Models;
-using ASDAssignmentUTS.Repositories; // Ensure you add this using directive
+using ASDAssignmentUTS.Repositories;
 
 namespace ASDAssignmentUTS.Controllers
 {
@@ -10,7 +10,6 @@ namespace ASDAssignmentUTS.Controllers
     {
         private readonly UserRepository _userRepository;
 
-        // Injecting UserRepository into the controller
         public AccountController(UserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -21,14 +20,25 @@ namespace ASDAssignmentUTS.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
         public IActionResult Register()
         {
             return View(new RegisterModel()); 
         }
 
-        [HttpPost]
+        [HttpGet]
+        public IActionResult Delete()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login");
+            }
+
+            return View(); 
+        }
+
+                [HttpPost]
         public IActionResult Login(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -37,8 +47,7 @@ namespace ASDAssignmentUTS.Controllers
                 if (_userRepository.ValidateUser(model))
                 {
                     // User is validated successfully
-                    // Set up session/cookie and redirect to settings or desired page
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Home", "Home");
                 }
                 else
                 {
@@ -48,7 +57,7 @@ namespace ASDAssignmentUTS.Controllers
             return View(model);
         }
 
-        [HttpPost]
+                [HttpPost]
         public IActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -63,31 +72,62 @@ namespace ASDAssignmentUTS.Controllers
         public IActionResult Settings()
         {
 
-            return View(); // Ensure you have a corresponding Settings view
+            return View(); 
         }
 
-        [HttpPost]
-        public IActionResult DeleteAccount()
+[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult DeleteConfirmed(IFormCollection collection)
+{
+    try
+    {
+        string username = collection["username"];
+        string password = collection["password"];
+
+        // First, validate the username and password.
+        var validUser = _userRepository.ValidateUser(new LoginModel
         {
-            // Ensure user is logged in
-            if (!User.Identity.IsAuthenticated)
+            Username = username,
+            Password = password 
+        });
+
+        // If the credentials are valid, proceed with deletion.
+        if (validUser)
+        {
+            int? userId = _userRepository.GetUserIdByUsername(username);
+            if (userId.HasValue)
             {
-                return RedirectToAction("Login");
+                _userRepository.DeleteUser(userId.Value);
+                return RedirectToAction("Login"); // Redirects to Logout after successful deletion
             }
-
-            // Use UserRepository to delete user account from database
-            _userRepository.DeleteUser(User.Identity.Name); // You might need to implement this method in UserRepository
-
-            // Handle session/cookie logout here
-            // Then redirect to a confirmation or home page
-            return RedirectToAction("Index", "Home"); // Adjust this as necessary
+            else
+            {
+                ModelState.AddModelError("", "An unexpected error occurred. Please try again.");
+                return View(); // Might need to redirect to a specific view for error feedback
+            }
         }
+        else
+        {
+            // Handle invalid credentials
+            ModelState.AddModelError("", "Invalid username or password.");
+            return View(); // Might need to redirect to a specific view for invalid credentials
+        }
+    }
+    catch
+    {
+        // Handle general exceptions
+        ModelState.AddModelError("", "An error occurred while processing your request. Please try again later.");
+        return View(); 
+    }
+}
+
+
 
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-           
-            return RedirectToAction("Login"); // or redirect to login page, or wherever you want
+            
+            return RedirectToAction("Login");
         }
 
 

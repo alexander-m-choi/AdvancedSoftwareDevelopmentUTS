@@ -19,7 +19,7 @@ namespace ASDAssignmentUTS.Controllers
         [HttpGet]
         public IActionResult UserRegistration()
         {
-            return View(new RegisterModel()); // Ensure you have a view named 'UserRegistration' in the 'Views/UserRegistration' folder
+            return View(new RegisterModel()); 
         }
 
 [HttpPost]
@@ -34,11 +34,10 @@ public IActionResult UserRegistration(RegisterModel model)
 
             // Provide a success message to the user
             ViewBag.SuccessMessage = "Registration successful! You can now log in.";
-            return View("Login"); // Assuming you have a Login view to redirect to
+            return View("Login"); 
         }
         catch (Exception ex) // Catch any exceptions that occur during registration
         {
-            // Log the exception (consider using a logging framework)
             // Provide an error message to the user
             ViewBag.ErrorMessage = "Registration failed: " + ex.Message;
             return View(model); // Redisplay the registration form with the error message
@@ -51,6 +50,5 @@ public IActionResult UserRegistration(RegisterModel model)
 }
 
 
-        // ... other actions ...
     }
 }

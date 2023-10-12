@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "63IuvQzijfyUodDYGIRkQRdVHUgxfOvkgYz0klbcRKlH3ZUFjxd49lbwLkp0bG/KDD8IjlAJek857BrXfqOyiA==",
+  "dgSpecHash": "SD6rOjE3cxdGKuWxx2qQJiOew68jg0fVNCTWNeeK0+GqaOP/qsXKNfE3iShlVOxcEd5g4bkiVt78jEygP81r+A==",
   "success": true,
-  "projectFilePath": "/Users/lavmore/workspaces/ws2/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
+  "projectFilePath": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/ASDAssignmentUTS.csproj",
   "expectedPackageFiles": [
     "/Users/lavmore/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/lavmore/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
