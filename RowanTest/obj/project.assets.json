@@ -2302,11 +2302,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj",
+      "projectUniqueName": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTest\\RowanTest.csproj",
       "projectName": "RowanTest",
-      "projectPath": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj",
+      "projectPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTest\\RowanTest.csproj",
       "packagesPath": "C:\\Users\\rowan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\obj\\",
+      "outputPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rowan\\AppData\\Roaming\\NuGet\\NuGet.Config",
