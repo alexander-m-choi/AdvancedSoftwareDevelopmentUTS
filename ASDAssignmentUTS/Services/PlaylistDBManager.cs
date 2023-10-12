@@ -2,6 +2,7 @@ using ASDAssignmentUTS.Models;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
 
 namespace ASDAssignmentUTS.Services;
 public static class PlaylistDBManager
@@ -122,28 +123,66 @@ public static class PlaylistDBManager
 
     public static Playlist GetPlaylistById(int id)
     {
-        Playlist playlist = new Playlist();
+        var playlist = new Playlist();
         using (var connection = new SqlConnection(connectionString))
         {
+            connection.Open();
             using (var command = new SqlCommand())
             {
-                connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM Playlist WHERE id = @id";
-                command.Parameters.AddWithValue("@id", id);
-                var reader = command.ExecuteReader();
-                while (reader.Read())
+                command.CommandText = "SELECT name, description, ownerId FROM Playlist WHERE id = @playlistId";
+                command.Parameters.AddWithValue("@playlistId", id);
+
+                using (var reader = command.ExecuteReader())
                 {
-                    playlist = new Playlist
-                    (
-                        reader.GetInt32(0), // id
-                        reader.GetString(1), // name
-                        reader.GetString(2), // description
-                        reader.GetInt32(3) // ownerId
-                    );
+                    if (reader.Read())
+                    {
+                        playlist.id = id;
+                        playlist.name = reader.GetString(0);
+                        playlist.description = reader.GetString(1);
+                        playlist.ownerId = reader.GetInt32(2);
+                    }
+                }
+            }
+
+            using (var command = new SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = "SELECT name, artist_id FROM SongToPlaylist JOIN Song ON SongToPlaylist.songID = Song.id WHERE playlistID = @playlistId";
+                command.Parameters.AddWithValue("@playlistId", id);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    playlist.Songs = new List<Song>();
+                    while (reader.Read())
+                    {
+                        var song = new Song();
+                        song.name = reader.GetString(0);
+                        song.artistId = reader.GetInt32(1);
+                        playlist.Songs.Add(song);
+                    }
                 }
             }
         }
         return playlist;
+    }
+    public static void RemoveSongFromPlaylist(int playlistID, int songID)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            // Construct the SQL query to delete the row from the SongToPlaylist table
+            string query = "DELETE FROM SongToPlaylist WHERE playlistID = @playlistID AND songID = @songID";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                // Add the parameters to the command
+                command.Parameters.AddWithValue("@playlistID", playlistID);
+                command.Parameters.AddWithValue("@songID", songID);
+
+                // Execute the command
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

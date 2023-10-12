@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using ASDAssignmentUTS.Controllers;
 using ASDAssignmentUTS.Services;
 
 namespace ASDAssignmentUTS.Models
@@ -16,6 +17,8 @@ namespace ASDAssignmentUTS.Models
 
         [Required(ErrorMessage = "Please enter an owner ID for the playlist.")]
         public int ownerId { get; set; }
+
+        public List<Song> Songs { get; set; }
 
         public Playlist(int id, string name, string description, int ownerId)
         {
