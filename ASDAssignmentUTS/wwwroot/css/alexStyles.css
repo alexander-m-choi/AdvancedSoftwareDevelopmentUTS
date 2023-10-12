@@ -27,7 +27,7 @@ button {
     text-align: center;
     border: 5px solid black;
     background-color: black;
-    color: black;
+    color: white;
     display: block;
     margin: auto;
     font-size: 20px;
@@ -41,15 +41,21 @@ button {
     }
 
 .table-white-text {
-
+    width: 100%;
+    border-collapse: collapse;
 }
 
     .table-white-text th {
         background-color: darkslateblue;
+        color: white;
     }
 
     .table-white-text tr {
         background-color: cadetblue;
     }
 
+    .table-white-text th, .table-white-text td {
+        padding: 8px;
+        text-align: left;
+    }
 

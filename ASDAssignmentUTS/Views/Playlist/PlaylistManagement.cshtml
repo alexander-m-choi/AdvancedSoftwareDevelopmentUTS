@@ -43,9 +43,9 @@
                     @Html.DisplayFor(modelItem => item.ownerId)
                 </td>
                 <td>
-                    <button onclick="confirmDelete(@item.id)">Delete</button>
-                    @Html.ActionLink("Details", "EditPlaylist", new { id = item.id }) |
-                    <button onclick="confirmView(@item.id)">View</button>
+                    <button class="btn btn-primary" onclick="confirmView(@item.id)">View</button>
+                    <a asp-action="UpdatePlaylist" asp-route-id="@item.id" class="btn btn-secondary">Edit Info</a>
+                    <button class="btn btn-danger" onclick="confirmDelete(@item.id)">Delete</button>
                 </td>
             </tr>
 
