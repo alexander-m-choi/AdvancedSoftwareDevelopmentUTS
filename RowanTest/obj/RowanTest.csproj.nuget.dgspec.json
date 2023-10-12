@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj": {}
+    "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj": {
+    "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj",
-        "projectName": "RowanTests.test",
-        "projectPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj",
+        "projectUniqueName": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj",
+        "projectName": "RowanTest",
+        "projectPath": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj",
         "packagesPath": "C:\\Users\\rowan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\obj\\",
+        "outputPath": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rowan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23455.8\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RmCV2I3BAc23AE/ztW2nqg7+VAs/3O8eKaiZuffU+3lRlT2JuuiDmFs2ohgbHFQRyMcd7imTnpPPw16QG0dHRg==",
+  "dgSpecHash": "OKLuy5IAvpUuiMuPNFzW8IVQbAaTOkroHboV/5EKB9p29L9OzPpqHljSBjnHTzx8WNpu1j0bWHeqXWjdy4QHIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rowan\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\RowanTests.test\\RowanTests.test.csproj",
+  "projectFilePath": "C:\\Users\\rowan\\source\\repos\\RowanTest\\RowanTest\\RowanTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rowan\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\rowan\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",
