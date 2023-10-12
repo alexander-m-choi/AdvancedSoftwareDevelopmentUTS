@@ -109,10 +109,15 @@ namespace ASDAssignmentUTS.Controllers
             var artist = SongDBManager.GetArtistById(id);
             return View(artist);
         }
-
+        [HttpGet]
         public ActionResult UpdateSong(int id)
         {
             var song = SongDBManager.GetSongById(id);
+            Artist artist = new Artist();
+            var allArtist = artist.GetArtists();
+            //this will list all the artists in the view bag.
+            ViewBag.Artists = allArtist;
+            ViewBag.artistId = song.artistId;
             return View(song);
         }
 
@@ -160,12 +165,6 @@ namespace ASDAssignmentUTS.Controllers
             {
                 return View();
             }
-        }
-
-        [HttpGet]
-        public ActionResult DeleteArtist(int id)
-        {
-            return View();
         }
 
         // POST: AdminController/Delete/5
