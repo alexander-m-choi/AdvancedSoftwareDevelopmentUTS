@@ -97,15 +97,23 @@ namespace ASDAssignmentUTS.Services
 
         public static void DeleteSong(int id)
         {
-            using (SqlConnection conn = new SqlConnection(connectionStr))
+            try
             {
-                conn.Open();
-                string sql = @"DELETE FROM Song WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"DELETE FROM Song WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
             }
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            
         }
 
         public static List<Song> GetSongsByArtist(int artistId)
@@ -149,17 +157,25 @@ namespace ASDAssignmentUTS.Services
 
         public static void DeleteArtist(int id)
         {
-            //deletes the songs that is associated with the artist.
-            DeleteSongsByArtist(id);
-            using (SqlConnection conn = new SqlConnection(connectionStr))
+            try
             {
-                conn.Open();
-                string sql = @"DELETE FROM Artist WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                //deletes the songs that is associated with the artist.
+                DeleteSongsByArtist(id);
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"DELETE FROM Artist WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
             }
+            catch (SqlException e)
+            {
+                throw new QueryErrorException(e.Message);
+            }
+            
         }
 
         public static Song GetSongById(int id)
@@ -395,6 +411,29 @@ namespace ASDAssignmentUTS.Services
             catch (SongNotFoundException)
             {
                 throw new SongNotFoundException();
+            }
+        }
+
+        //this is used for unit testing purposes
+        public static void DeleteArtistByName(string name)
+        {
+            try
+            {
+                Artist artist = new Artist();
+                using (SqlConnection conn = new SqlConnection(connectionStr))
+                {
+                    conn.Open();
+                    string sql = @"DELETE FROM Artist WHERE name = @name";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            catch (SqlException)
+            {
+                //this will not do anything if there is an exception.
+                return;
             }
         }
 
