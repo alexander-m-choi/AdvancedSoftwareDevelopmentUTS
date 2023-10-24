@@ -101,5 +101,22 @@ namespace ASDAssignmentUTS.Controllers
                 return View();
             }
         }
+
+        public ActionResult ResetPassword(int id)
+        {
+            User user = UserDBManager.GetUserById(id);
+            //generates random password
+            Random random = new Random();
+            string password = "";
+            for (int i = 0; i < 8; i++)
+            {
+                password += (char)random.Next(33, 126);
+            }
+            //updates the user's password
+            UserDBManager.ResetPassword(id, password);
+            //shows the new password to the user
+            ViewBag.password = password;
+            return View(user);
+        }
     }
 }

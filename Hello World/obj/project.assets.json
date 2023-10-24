@@ -12410,19 +12410,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alexander\\.nuget\\packages\\": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\Hello World\\Hello World.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\Hello World\\Hello World.csproj",
       "projectName": "Hello World",
-      "projectPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\Hello World\\Hello World.csproj",
-      "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
-      "outputPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\Hello World\\obj\\",
+      "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\Hello World\\Hello World.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\Hello World\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12436,8 +12436,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
-              "projectPath": "E:\\Documents\\GitHub\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
+            "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj": {
+              "projectPath": "C:\\Users\\chris\\Source\\Repos\\alexander-m-choi\\AdvancedSoftwareDevelopmentUTS\\ASDAssignmentUTS\\ASDAssignmentUTS.csproj"
             }
           }
         }
@@ -12485,7 +12485,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
