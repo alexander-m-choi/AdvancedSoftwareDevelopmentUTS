@@ -36,6 +36,37 @@ public static class PlaylistDBManager
         return playlists;
     }
 
+    //For the given userid, get their playlists from the database
+    public static List<Playlist> GetPlaylistsByUserId(int? userId)
+    {
+        List<Playlist> playlists = new List<Playlist>();
+        using (var connection = new SqlConnection(connectionString))
+        {
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Playlist WHERE ownerId = @userId";
+                command.Parameters.AddWithValue("@userId", userId);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Playlist playlist = new Playlist
+                    (
+                        reader.GetInt32(0), // id
+                        reader.GetString(1), // name
+                        reader.GetString(2), // description
+                        reader.GetInt32(3) // ownerId
+                    );
+                    playlists.Add(playlist);
+                }
+            }
+        }
+        return playlists;
+    }
+
+
+
     //add playlist
 
     public static void AddPlaylist(Playlist playlist)

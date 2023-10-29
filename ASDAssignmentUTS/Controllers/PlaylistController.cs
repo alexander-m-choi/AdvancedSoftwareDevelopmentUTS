@@ -11,7 +11,20 @@ namespace ASDAssignmentUTS.Controllers
     public class PlaylistController : Controller
     {
 
+        //Method to get the playlist for the logged in user
+        //which we will determine by pulling the userid from the session
+        //and then using that to get the playlist from the database
         public ActionResult PlaylistManagement()
+        {
+            //get the user id from the session
+            int? userId = HttpContext.Session.GetInt32("LoggedInUser");
+            //get the playlist from the database
+            List<Playlist> playlists = PlaylistDBManager.GetPlaylistsByUserId(userId);
+            //return the view with the playlist
+            return View(playlists);
+        }
+
+        /*public ActionResult PlaylistManagement()
         {
             List<Playlist> playlists = PlaylistDBManager.GetPlaylists();
             return View(playlists);
@@ -20,7 +33,7 @@ namespace ASDAssignmentUTS.Controllers
         public ActionResult AddPlaylist()
         {
             return View();
-        }
+        }*/
 
         // POST: PlaylistController/AddPlaylist
         [HttpPost]

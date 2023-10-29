@@ -1,7 +1,11 @@
 using ASDAssignmentUTS.Repositories;
+using Microsoft.AspNetCore.Session;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddSession();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<UserRepository>(serviceProvider =>
@@ -23,6 +27,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

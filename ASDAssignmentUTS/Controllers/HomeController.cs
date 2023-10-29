@@ -29,7 +29,7 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         public IActionResult ArtistSearch()
-        {             
+        {
             return View();
         }
 
