@@ -40,7 +40,24 @@
     </div>
 </div>
 
+<script>
+    function goToResetPasswordInPopUpWindow() {
+        //this will check if the popup window is blocked and display an alert.
+        //if (window.open('', 'testpopup', 'width=1,height=1').focus()) {
+          //  alert('Please allow popups for this website');)
+        //} else {
+            var url = "/AdminUser/ResetPassword?id=" + document.getElementById("id").value;
+            window.open(url, "Reset Password", "width=500,height=500");
+        //}
+    }
+</script>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        
+    </script>
+
 }
