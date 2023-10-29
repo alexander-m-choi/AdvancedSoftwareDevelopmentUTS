@@ -2,9 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ASDAssignmentUTS",
+    "\\ASDAssignmentUTS\\Models",
+    "\\ASDAssignmentUTS\\obj",
     "\\ASDAssignmentUTS\\Views",
-    "\\ASDAssignmentUTS\\Views\\AdminSong"
+    "\\ASDAssignmentUTS\\Views\\AdminSong",
+    "\\ASDAssignmentUTS\\Views\\Artist",
+    "\\ASDAssignmentUTS\\Views\\Home",
+    "\\ASDAssignmentUTS\\Views\\Review",
+    "\\ASDAssignmentUTS\\Views\\Shared"
   ],
-  "SelectedNode": "\\ASDAssignmentUTS\\Views\\AdminSong\\UpdateSong.cshtml",
+  "SelectedNode": "\\ASDAssignmentUTS.sln",
   "PreviewInSolutionExplorer": false
 }

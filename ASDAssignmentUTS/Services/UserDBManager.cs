@@ -159,6 +159,60 @@ namespace ASDAssignmentUTS.Services
                 throw new UserNotFoundException();
             }
         }
+
+        //this will be use to reset the users password from the admin side and generate a temporary password for the user.
+        public static void ResetPassword(int id, string newPassword)
+        {
+            try
+            {
+                User user = new User();
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"UPDATE RowanUsers SET password = @password WHERE id = @id";
+                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@password", newPassword);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch
+            {
+                throw new Exception("User not found");
+            }
+        }
+
+        //this will be used to get the user's password from the database after its being regenerated for the user upon reset password.
+        public static string GetPassword(int id)
+        {
+            try
+            {
+                User user = new User();
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"SELECT password FROM RowanUsers WHERE id = @id";
+                        command.Parameters.AddWithValue("@id", id);
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            user.password = reader.GetString(0);
+                        }
+                    }
+                }
+                return user.password;
+            }
+            catch
+            {
+                throw new Exception("User not found");
+            }
+        }
     }
 
     public class UserNotFoundException : Exception

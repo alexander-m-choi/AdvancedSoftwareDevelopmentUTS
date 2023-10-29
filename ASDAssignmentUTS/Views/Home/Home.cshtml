@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,15 @@
             <button> <a class="nav-link text-dark" asp-area="" asp-controller="SongSearch" asp-action="SongSearch">Search for a Song</a></button>
             <p></p>
             <button>View Playlists</button>
+            <p></p>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <a asp-controller="Account" asp-action="Settings" class="btn btn-primary">Settings</a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+            }
         </div>
     </main>
 
