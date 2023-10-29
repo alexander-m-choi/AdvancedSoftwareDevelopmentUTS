@@ -61,10 +61,9 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = @"UPDATE RowanUsers SET username = @username, password = @password, email = @email WHERE id = @id";
+                    command.CommandText = @"UPDATE RowanUsers SET username = @username, email = @email WHERE id = @id";
                     command.Parameters.AddWithValue("@id", user.id);
                     command.Parameters.AddWithValue("@username", user.username);
-                    command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
                     command.ExecuteNonQuery();
                 };

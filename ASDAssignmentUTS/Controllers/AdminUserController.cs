@@ -110,12 +110,14 @@ namespace ASDAssignmentUTS.Controllers
             string password = "";
             for (int i = 0; i < 8; i++)
             {
-                password += (char)random.Next(33, 126);
+                password += (char)random.Next(48, 58);
+                password += (char)random.Next(65, 91);
+                password += (char)random.Next(97, 123);
             }
-            //updates the user's password
-            UserDBManager.ResetPassword(id, password);
             //shows the new password to the user
             ViewBag.password = password;
+            //updates the user's password
+            UserDBManager.ResetPassword(id, password);
             return View(user);
         }
     }

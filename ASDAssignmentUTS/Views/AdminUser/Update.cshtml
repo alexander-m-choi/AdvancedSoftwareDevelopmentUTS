@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <a class="btn btn-secondary m-2" asp-action="UserManagement">Cancel</a>
-                <button class="btn btn-danger" onclick="goToResetPasswordInPopUpWindow();">Reset Password</button>
+                <a href="#"><button class="btn btn-danger" onclick="goToResetPasswordInPopUpWindow()">Reset Password</button></a>
                 <input type="submit" value="Update" class="btn btn-primary" />
             </div>
         </form>
@@ -56,11 +56,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
-
-    <script>
-        
-    
-    <script>
-     
 }
+
+     
+
