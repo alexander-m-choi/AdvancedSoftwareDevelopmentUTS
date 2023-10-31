@@ -70,7 +70,6 @@ public async Task<IActionResult> Login(LoginModel model)
                 // Fetch the user's role from the database.
                 string userRole = _userRepository.GetUserRoleByUsername(model.Username);
                 
-
                 // User is validated successfully
                 var claims = new List<Claim>
                 {
@@ -91,24 +90,26 @@ public async Task<IActionResult> Login(LoginModel model)
                 {
                     return RedirectToAction("AdminMenu", "Home");
                 }
-               // else
+                else
                 {
                     return RedirectToAction("Home", "Home");
                 }
             }
             else
             {
-                // Handle the null username scenario
-                ModelState.AddModelError("", "Username cannot be null.");
+                // Handle the null username scenario using TempData
+                TempData["StatusMessage"] = "Username cannot be null.";
             }
         }
         else
         {
-            ModelState.AddModelError("", "Invalid username or password.");
+            // Handle the invalid username or password scenario using TempData
+            TempData["StatusMessage"] = "Invalid username or password.";
         }
     }
     return View(model);
 }
+
 
 
 
@@ -243,6 +244,35 @@ public ActionResult DeleteConfirmed(IFormCollection collection)
             return RedirectToAction("Settings");
         }
     }
+
+[HttpPost]
+public IActionResult ChangePassword(string currentPassword, string newPassword, string confirmNewPassword)
+{
+    if (string.IsNullOrEmpty(currentPassword) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmNewPassword))
+    {
+        TempData["StatusMessage"] = "Please enter current password, new password, and confirm new password.";
+        return RedirectToAction("Settings");
+    }
+
+    if(newPassword != confirmNewPassword)
+    {
+        TempData["StatusMessage"] = "New password and confirm new password do not match.";
+        return RedirectToAction("Settings");
+    }
+
+    var storedPassword = _userRepository.GetCurrentPassword(User.Identity.Name);
+    if (storedPassword != currentPassword)
+    {
+        TempData["StatusMessage"] = "The current password you entered is incorrect.";
+        return RedirectToAction("Settings");
+    }
+
+    _userRepository.UpdatePassword(User.Identity.Name, newPassword);
+    TempData["StatusMessage"] = "Password successfully changed.";
+    return RedirectToAction("Settings");
+}
+
+
 
 [HttpPost]
 public async Task<IActionResult> Logout()

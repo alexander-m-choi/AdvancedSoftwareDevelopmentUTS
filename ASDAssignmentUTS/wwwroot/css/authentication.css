@@ -82,3 +82,13 @@ button.navigate-register {
 button.navigate-register:hover {
     background-color: #005fa3;
 }
+
+.error-box {
+    border: 1px solid red;
+    color: red;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffe6e6; /* Light red background for better visibility */
+}

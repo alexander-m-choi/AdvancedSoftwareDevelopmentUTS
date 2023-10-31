@@ -6,6 +6,15 @@
 
 <div class="auth-container">
 
+    @if (!string.IsNullOrEmpty(TempData["StatusMessage"] as string))
+    {
+        <div class="notification">
+            <div class="error-box">
+                @TempData["StatusMessage"]
+            </div>
+        </div>
+    }
+
     <h2 class="auth-header">Login</h2>
 
     <h3 class="auth-header">@ViewBag.Title</h3>
@@ -14,12 +23,22 @@
         <div class="form-group">
             <label asp-for="Username">Username:</label>
             <input asp-for="Username" required class="form-input" />
-            <span asp-validation-for="Username" class="text-danger"></span>
+            @if (!string.IsNullOrEmpty(ViewData.ModelState["Username"]?.Errors.FirstOrDefault()?.ErrorMessage))
+            {
+                <div class="error-box">
+                    <span asp-validation-for="Username"></span>
+                </div>
+            }
         </div>
         <div class="form-group">
             <label asp-for="Password">Password:</label>
             <input type="password" asp-for="Password" required class="form-input" />
-            <span asp-validation-for="Password" class="text-danger"></span>
+            @if (!string.IsNullOrEmpty(ViewData.ModelState["Password"]?.Errors.FirstOrDefault()?.ErrorMessage))
+            {
+                <div class="error-box">
+                    <span asp-validation-for="Password"></span>
+                </div>
+            }
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Login</button>

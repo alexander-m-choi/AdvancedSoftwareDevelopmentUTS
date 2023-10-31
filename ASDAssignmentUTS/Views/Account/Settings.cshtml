@@ -29,6 +29,25 @@
         </div>
     </form>
 
+    <form method="post" asp-action="ChangePassword" asp-controller="Account" class="auth-form">
+    <div class="form-group">
+        <label for="currentPassword">Current Password:</label>
+        <input type="password" name="currentPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" name="newPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <label for="confirmNewPassword">Confirm New Password:</label>
+        <input type="password" name="confirmNewPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Change Password</button>
+    </div>
+    </form>
+
+
     <form method="post" asp-action="Logout" asp-controller="Account" class="auth-form">
         <div class="form-group">
             <button type="submit" class="btn btn-secondary">Logout</button>

@@ -3,6 +3,8 @@
     using System.Data.SqlClient;
     using Microsoft.Extensions.Configuration;
 
+
+
     namespace ASDAssignmentUTS.Repositories
     {
         public class UserRepository
@@ -136,7 +138,33 @@
         }
     }
 
+public string GetCurrentPassword(string username)
+{
+    using (var connection = new SqlConnection(_connectionString))
+    {
+        connection.Open();
+        using (var command = new SqlCommand("SELECT Password FROM RowanUsers WHERE Username = @Username", connection))
+        {
+            command.Parameters.AddWithValue("@Username", username);
+            return (string)command.ExecuteScalar();
+        }
+    }
+}
 
+
+public void UpdatePassword(string username, string newPassword)
+{
+    using (var connection = new SqlConnection(_connectionString))
+    {
+        connection.Open();
+        using (var command = new SqlCommand("UPDATE RowanUsers SET Password = @NewPassword WHERE Username = @Username", connection))
+        {
+            command.Parameters.AddWithValue("@Username", username);
+            command.Parameters.AddWithValue("@NewPassword", newPassword);
+            command.ExecuteNonQuery();
+        }
+    }
+}
 
 
             // Implement other methods to interact with the User table as needed
