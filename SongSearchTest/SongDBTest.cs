@@ -26,6 +26,7 @@ namespace SongSearchTest
             Assert.AreEqual("Fire", song.name);
             Assert.AreEqual("Rock", song.genre);
             Assert.AreEqual("The latest music from Imagine Vampires.", song.description);
+            SongDBManager.DeleteSong(testsong.id);
         }
     }
 }
