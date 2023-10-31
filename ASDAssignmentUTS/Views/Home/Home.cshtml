@@ -25,7 +25,7 @@
         <div class="intro">
             <button> <a class="nav-link text-dark" asp-area="" asp-controller="SongSearch" asp-action="SongSearch">Search for a Song</a></button>
             <p></p>
-            <button>View Playlists</button>
+            <button><a class="nav-link text-dark" asp-area="" asp-controller="Playlist" asp-action="PlaylistManagement">View Playlists</a></button>
             <p></p>
             @if (User?.Identity?.IsAuthenticated ?? false)
             {
