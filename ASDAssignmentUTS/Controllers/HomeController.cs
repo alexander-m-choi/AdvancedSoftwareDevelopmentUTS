@@ -1,7 +1,9 @@
 ﻿using ASDAssignmentUTS.Models;
+using ASDAssignmentUTS.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
-
 namespace ASDAssignmentUTS.Controllers
 {
     public class HomeController : Controller
@@ -18,8 +20,9 @@ namespace ASDAssignmentUTS.Controllers
             return View();
         }
 
-        public IActionResult Home()
+        public IActionResult Home(int id)
         {
+            User user = UserDBManager.GetUserById(id);
             return View();
         }
 
