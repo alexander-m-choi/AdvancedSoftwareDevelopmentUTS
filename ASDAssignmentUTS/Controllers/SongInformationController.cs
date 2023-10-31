@@ -6,14 +6,20 @@ namespace ASDAssignmentUTS.Controllers
 {
     public class SongInformationController : Controller
     {
-        public IActionResult SongDetails(int id)
-        {
-            //Update the ID to be able to be parsed in from song search :))
 
-            id = 2;
-            Song song = SongDBManager.GetSongById(2);
-            return View(song);
-        }
+        // GET: SongInformationController/Details/5
+        public IActionResult SongDetails(int? id)
+        {
+            if (id.HasValue)
+            {
+                Song song = SongDBManager.GetSongById(id.Value);
+                return View(song);
+            }
+            else
+            {
+                return RedirectToAction("SongSearch", "SongSearch");
+            }
+        } 
 
 
     }
