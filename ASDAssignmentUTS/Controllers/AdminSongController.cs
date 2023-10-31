@@ -205,12 +205,6 @@ namespace ASDAssignmentUTS.Controllers
             return View(songs);
         }
 
-        public ActionResult DeleteReview(int id)
-        {
-            ReviewDBManager.DeleteReview(id);
-            return RedirectToAction(nameof(SongManagement));
-        }
-
         [HttpPost]
         public ActionResult DeleteReview(IFormCollection collection)
         {

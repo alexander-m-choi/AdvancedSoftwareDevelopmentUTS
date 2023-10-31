@@ -7,7 +7,7 @@
 var clickedSongId = 0;
 var clickedArtistId = 0;
 var clickedUserId = 0;
-
+var clickedReviewId = 0;
 
 //this is a function to delete a selected song from the admin song management inside a table
 $(document).ready(function () {
@@ -59,6 +59,11 @@ $(document).ready(function () {
         window.location.href = "/AdminSong/SongManagement/" + clickedArtistId;
     })
 
+    //this is used to view reviews by song.
+$("#viewReviews").click(function () {
+        window.location.href = "/AdminSong/ReviewManagement/" + clickedSongId;
+    })
+
     //this is for the user management stuffs
     //first, this will delete the user
     $("#deleteUser").click(function () {
@@ -80,6 +85,22 @@ $(document).ready(function () {
     $("#updateUser").click(function () {
         window.location.href = "/AdminUser/Update/" + clickedUserId;
     });
+
+    //deletes the review
+    $("#deleteReview").click(function () {
+        if (confirm("Are you sure you want to delete this review?")) {
+            $.ajax({
+                url: '/AdminSong/DeleteReview',
+                type: 'POST',
+                data: {
+                    "id": clickedReviewId
+                },
+                success: function (result) {
+                    window.location.reload();
+                }
+            })
+        }
+    })
 })
 
 //this function will listen to the click event on the table row and highlight the row
@@ -89,6 +110,7 @@ function onSongClick(id) {
     //enables the buttons
     $("#deleteSong").prop("disabled", false);
     $("#updateSong").prop("disabled", false);
+    $("#viewReviews").prop("disabled", false);
     $(document).ready(function () {
         $("#songTable tr").removeClass("bg-secondary text-white");
         $("#" + id).addClass("bg-secondary text-white");
@@ -123,4 +145,16 @@ function onUserClick(id) {
         $("#" + id).addClass("bg-secondary text-white");
     });
     console.log("clicked " + clickedUserId);
+}
+
+ //this function will listen to the click event on the table row and highlight the row from the Reviews table
+function onReviewClick(id) {
+    clickedReviewId = id;
+    $("#deleteReview").prop("disabled", false);
+    
+    $(document).ready(function () {
+        $("#reviewTable tr").removeClass("bg-secondary text-white");
+        $("#" + id).addClass("bg-secondary text-white");
+    });
+    console.log("clicked " + clickedReviewId);
 }

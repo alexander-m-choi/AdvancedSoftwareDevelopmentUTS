@@ -1,59 +1,67 @@
 ﻿@model IEnumerable<ASDAssignmentUTS.Models.Review>
 
 @{
-    ViewData["Title"] = "ReviewManagement";
+    ViewData["Title"] = "Review Management";
 }
 
-<h1>ReviewManagement</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Review_ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Review_Star)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Review_Entry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User_ID_FK)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Song_ID_FK)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review_ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review_Star)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review_Entry)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User_ID_FK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Song_ID_FK)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<div class="container">
+    <div class="row p-4">
+        <h1 class="center">Review Management</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-2 p-1">
+            <button disabled id="deleteReview" class="btn btn-dark m-3">Delete Review</button>
+        </div>
+        <div class="col-9">
+            <table class="table table-hover" name="reviewTable" id="reviewTable"">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Stars
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            User Id
+                        </th>
+                        <th>
+                            Song ID
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var review in Model)
+                    {
+                        <tr id="@Html.DisplayFor(modelItem => review.Review_ID)" onclick='onReviewClick(@Html.DisplayFor(modelItem => review.Review_ID));'>
+                            <td>
+                                @Html.DisplayFor(modelItem => review.Review_ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => review.Review_Star)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => review.Review_Entry)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => review.User_ID_FK)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => review.Song_ID_FK)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
