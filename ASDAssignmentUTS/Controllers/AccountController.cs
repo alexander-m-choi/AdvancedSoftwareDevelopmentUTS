@@ -5,6 +5,7 @@ using ASDAssignmentUTS.Models;
 using ASDAssignmentUTS.Repositories;
 using System.Security.Claims;
 using System.Collections.Generic;
+using ASDAssignmentUTS.Services;
 
 
 namespace ASDAssignmentUTS.Controllers
@@ -17,9 +18,12 @@ namespace ASDAssignmentUTS.Controllers
         [TempData]
         public string StatusMessage { get; set; }
 
+
         public AccountController(UserRepository userRepository)
         {
             _userRepository = userRepository;
+            string connectionString = DBConnector.GetConnectionString();
+            _userRepository = new UserRepository(connectionString);
         }
 
         [HttpGet]
@@ -30,6 +34,12 @@ namespace ASDAssignmentUTS.Controllers
         
         [HttpGet]
         public IActionResult Register()
+        {
+            return View(new RegisterModel()); 
+        }
+
+        [HttpGet]
+        public IActionResult UserRegistration()
         {
             return View(new RegisterModel()); 
         }
@@ -47,8 +57,7 @@ public IActionResult Delete()
 
 
 
-
-        [HttpPost]
+[HttpPost]
 public async Task<IActionResult> Login(LoginModel model)
 {
     if (ModelState.IsValid)
@@ -56,19 +65,36 @@ public async Task<IActionResult> Login(LoginModel model)
         // Validate user with UserRepository
         if (_userRepository.ValidateUser(model))
         {
-            if (model.Username is not null) // Added null-check
+            if (model.Username is not null) // Added null-check for Username
             {
+                // Fetch the user's role from the database.
+                string userRole = _userRepository.GetUserRoleByUsername(model.Username);
+                
+
                 // User is validated successfully
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, model.Username)
-                    // You can add other claims as needed
                 };
+
+                // Add userRole to claims only if it's not null or empty
+                if (!string.IsNullOrEmpty(userRole))
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, userRole));
+                }
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                return RedirectToAction("Home", "Home");
+                // Redirect based on the role
+                if (string.Equals(userRole, "Admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    return RedirectToAction("AdminMenu", "Home");
+                }
+               // else
+                {
+                    return RedirectToAction("Home", "Home");
+                }
             }
             else
             {
@@ -87,6 +113,35 @@ public async Task<IActionResult> Login(LoginModel model)
 
 
 
+
+[HttpPost]
+public IActionResult UserRegistration(RegisterModel model)
+{
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            // Add user to database using the repository
+            _userRepository.AddUser(model);
+
+            // Provide a success message to the user
+            ViewBag.SuccessMessage = "Registration successful! You can now log in.";
+            return View("Login"); 
+        }
+        catch (Exception ex) // Catch any exceptions that occur during registration
+        {
+            // Provide an error message to the user
+            ViewBag.ErrorMessage = "Registration failed: " + ex.Message;
+            return View(model); // Redisplay the registration form with the error message
+        }
+    }
+
+    // If model state is invalid, redisplay the form
+    ViewBag.ErrorMessage = "Please correct the errors and try again.";
+    return View(model);
+}
+
+
 [HttpPost]
 public IActionResult Register(RegisterModel model)
 {
@@ -99,6 +154,12 @@ public IActionResult Register(RegisterModel model)
     if (_userRepository.EmailExists(model.Email)) 
     {
         ModelState.AddModelError("Email", "This email address is already registered. Please use another or log in.");
+    }
+        // Check if Role is selected
+        if (string.IsNullOrWhiteSpace(model.Role))
+    {
+        ModelState.AddModelError("Role", "Role is required.");
+        return View("~/Views/Account/UserRegistration.cshtml", model);
     }
 
     if (ModelState.IsValid)
@@ -115,10 +176,9 @@ public IActionResult Register(RegisterModel model)
         }
     }
 
-    return View("~/Views/UserRegistration/UserRegistration.cshtml", model);
+    return View("~/Views/Account/UserRegistration.cshtml", model);
 
 }
-
 
 
         public IActionResult Settings()
@@ -183,7 +243,6 @@ public ActionResult DeleteConfirmed(IFormCollection collection)
             return RedirectToAction("Settings");
         }
     }
-
 
 [HttpPost]
 public async Task<IActionResult> Logout()

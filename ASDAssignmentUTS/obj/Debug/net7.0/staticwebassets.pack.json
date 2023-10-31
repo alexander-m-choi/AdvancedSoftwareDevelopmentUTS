@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/ASDAssignmentUTS.bundle.scp.css"
     },
     {
+      "Id": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/alexStyles.css",
       "PackagePath": "staticwebassets/css/alexStyles.css"
     },

@@ -43,6 +43,15 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Register</button>
         </div>
+        <div class="form-group">
+    <label for="Role">Role:</label>
+    <select id="Role" name="Role" required class="form-input">
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
     </form>
 
     <div class="auth-footer">

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9T3czOi8rAeRHOsi0Q4j6ksJeyrvzBk5uT1ejtUgmRw=",
+  "Hash": "DpzkkVm0xIeUn3nD1owl+Fvqw+j5YyzofFblfid9ZoQ=",
   "Source": "ASDAssignmentUTS",
   "BasePath": "_content/ASDAssignmentUTS",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/obj/Debug/net7.0/scopedcss/projectbundle/ASDAssignmentUTS.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/.DS_Store",
+      "SourceId": "ASDAssignmentUTS",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/",
+      "BasePath": "_content/ASDAssignmentUTS",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
       "Identity": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/alexStyles.css",
