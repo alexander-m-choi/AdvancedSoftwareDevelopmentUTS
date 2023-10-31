@@ -204,5 +204,41 @@ namespace ASDAssignmentUTS.Controllers
             ViewBag.ArtistId = id;
             return View(songs);
         }
+
+        public ActionResult DeleteReview(int id)
+        {
+            ReviewDBManager.DeleteReview(id);
+            return RedirectToAction(nameof(SongManagement));
+        }
+
+        [HttpPost]
+        public ActionResult DeleteReview(IFormCollection collection)
+        {
+            try
+            {
+                ReviewDBManager.DeleteReview(Convert.ToInt32(collection["id"]));
+                return RedirectToAction(nameof(SongManagement));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult ReviewManagement(int? id)
+        {
+            //if the id is not null, then it will get the reviews by the song id.
+            if (id != null)
+            {
+                List<Review> reviews = ReviewDBManager.GetReviewsBySongId(id ?? 0);
+                ViewBag.SongId = id;
+                return View(reviews);
+            }
+            else
+            {
+                List<Review> reviews = ReviewDBManager.GetReviews();
+                return View(reviews);
+            }
+        }
     }
 }

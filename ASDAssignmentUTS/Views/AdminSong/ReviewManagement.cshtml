@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ASDAssignmentUTS.Models.Review>
+
+@{
+    ViewData["Title"] = "ReviewManagement";
+}
+
+<h1>ReviewManagement</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Review_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review_Star)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review_Entry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User_ID_FK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Song_ID_FK)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review_Star)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review_Entry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_ID_FK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Song_ID_FK)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
