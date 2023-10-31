@@ -3,7 +3,6 @@ using ASDAssignmentUTS.Models;
 using ASDAssignmentUTS.Services;
 using ASDAssignmentUTS.Repositories;
 
-
 namespace ASDAssignmentUTS.Controllers
 {
     public class UserRegistrationController : Controller
@@ -48,7 +47,6 @@ public IActionResult UserRegistration(RegisterModel model)
     ViewBag.ErrorMessage = "Please correct the errors and try again.";
     return View(model);
 }
-
 
     }
 }

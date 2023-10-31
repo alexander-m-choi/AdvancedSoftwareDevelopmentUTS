@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nuppHqoYdkKG25xLLlM1sM5vzuuVfaW/lDmpyvf91lw=",
+  "Hash": "9T3czOi8rAeRHOsi0Q4j6ksJeyrvzBk5uT1ejtUgmRw=",
   "Source": "ASDAssignmentUTS",
   "BasePath": "_content/ASDAssignmentUTS",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/alexStyles.css"
+    },
+    {
+      "Identity": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/authentication.css",
+      "SourceId": "ASDAssignmentUTS",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/",
+      "BasePath": "_content/ASDAssignmentUTS",
+      "RelativePath": "css/authentication.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/authentication.css"
     },
     {
       "Identity": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/homepage.css",

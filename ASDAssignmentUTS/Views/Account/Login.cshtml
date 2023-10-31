@@ -1,25 +1,32 @@
-@model ASDAssignmentUTS.Models.LoginModel
 @{
-    ViewBag.Title = "Login";
+    Layout = null;
 }
+@model ASDAssignmentUTS.Models.LoginModel
+<link rel="stylesheet" href="~/css/authentication.css">
 
-<h2>@ViewBag.Title</h2>
+<div class="auth-container">
 
-<form asp-action="Login" asp-controller="Account" method="post">
-    <div>
-        <label asp-for="Username">Username:</label>
-        <input asp-for="Username" required />
-        <span asp-validation-for="Username"></span>
+    <h2 class="auth-header">Login</h2>
+
+    <h3 class="auth-header">@ViewBag.Title</h3>
+
+    <form asp-action="Login" asp-controller="Account" method="post" class="auth-form">
+        <div class="form-group">
+            <label asp-for="Username">Username:</label>
+            <input asp-for="Username" required class="form-input" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password:</label>
+            <input type="password" asp-for="Password" required class="form-input" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+
+    <div class="auth-footer">
+        <button onclick="window.location.href='@Url.Action("UserRegistration", "UserRegistration")';" class="navigate-register">Register</button>
     </div>
-    <div>
-        <label asp-for="Password">Password:</label>
-        <input type="password" asp-for="Password" required />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <input type="submit" value="Login" />
-</form>
-
-<!-- Button to navigate to the registration page -->
-<button onclick="window.location.href='@Url.Action("UserRegistration", "UserRegistration")';">
-    Register
-</button>
+</div>

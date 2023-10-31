@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/css/alexStyles.css"
     },
     {
+      "Id": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/authentication.css",
+      "PackagePath": "staticwebassets/css/authentication.css"
+    },
+    {
       "Id": "/Users/lavmore/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/wwwroot/css/homepage.css",
       "PackagePath": "staticwebassets/css/homepage.css"
     },

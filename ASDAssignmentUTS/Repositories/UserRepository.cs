@@ -31,6 +31,44 @@ public void AddUser(RegisterModel model)
     }
         }
 
+public bool UsernameExists(string username)
+{
+    using (var connection = new SqlConnection(_connectionString))
+    {
+        connection.Open();
+        using (var command = new SqlCommand())
+        {
+            command.Connection = connection;
+            command.CommandText = "SELECT COUNT(*) FROM RowanUsers WHERE username = @username";
+            command.Parameters.AddWithValue("@username", username);
+            
+            int count = (int)command.ExecuteScalar();
+            
+            return count > 0; // Return true if username exists, otherwise false
+        }
+    }
+}
+
+public bool EmailExists(string email)
+{
+    using (var connection = new SqlConnection(_connectionString))
+    {
+        connection.Open();
+        using (var command = new SqlCommand())
+        {
+            command.Connection = connection;
+            command.CommandText = "SELECT COUNT(*) FROM RowanUsers WHERE email = @email";
+            command.Parameters.AddWithValue("@email", email);
+            
+            int count = (int)command.ExecuteScalar();
+            
+            return count > 0; // Return true if email exists, otherwise false
+        }
+    }
+}
+
+
+
         public bool ValidateUser(LoginModel model)
         {
             using SqlConnection connection = new SqlConnection(_connectionString);

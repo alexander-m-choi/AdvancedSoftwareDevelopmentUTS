@@ -1,0 +1,84 @@
+/* Base styles for the authentication pages */
+.auth-container {
+    max-width: 400px;  
+    margin: 5% auto;   
+    padding: 2rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 24px; /* Adjusted Font Size */
+    font-family: 'Arial', sans-serif; /* Set Font */
+    font-weight: bold;  /* Bold Font */
+    color: #2C3E50; /* Adjusted Color */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1); /* Added Subtle Shadow */
+    padding: 0.5rem 0; /* Added Padding */
+    border-bottom: 2px solid #3498db; /* Added Bottom Border */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    text-align: left;
+}
+
+.form-group input:focus {
+    border-color: #0077cc;
+    box-shadow: 0px 0px 5px rgba(0, 119, 204, 0.2);
+}
+
+.form-group .text-danger {
+    font-weight: bold;
+    color: #d9534f;
+    display: block;
+    text-align: center;
+}
+
+.btn-primary, button {
+    max-width: 280px;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+button.navigate-register {
+    max-width: 280px;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    display: block;
+    margin: 0.5rem auto;
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button.navigate-register:hover {
+    background-color: #005fa3;
+}
