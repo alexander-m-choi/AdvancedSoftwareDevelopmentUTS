@@ -3,54 +3,79 @@
 
 
 @{
-    ViewData["Title"] = "Search Results";
+    ViewData["Title"] = "Search Result";
 }
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row p-4">
+        <h1 class="center">Search Result</h1>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                id @* @Html.DisplayNameFor(model => model.id) *@
-            </th>
-            <th>
-                Title
-            </th>
-            <th>
-                Artist
-            </th>
-            <th>
-                Genre
-            </th>
-            <th>
-                Description
-            </th>
-            <th></th>
-        </tr>
-    </thead>
 
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => Model.id)
-            </td>
-            <td>
-            @Html.DisplayFor(modelItem => Model.name)
-            </td>
-            <td>
-            @Html.DisplayFor(modelItem => Model.ArtistName)
-            </td>
-            <td>
-            @Html.DisplayFor(modelItem => Model.genre)
-            </td>
-            <td>
-            @Html.DisplayFor(modelItem => Model.description)
-            </td>
-            <td>
-            </td>   
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <div class="row">
+        <div class="col-2 p-1">
+             <form action="/SongInformation/SongDetails" method="get">
+                <input type="hidden" name="id" value="@Model?.id" />
+                <button type="submit" class="btn btn-primary m-3">View Song Details</button>
+            <!--button to invoke songDetails method-->
+          @*   @Html.ActionLink("Song Details", "Details", "SongInformation", new { id = @Model.id }, null) *@
+            @* //<button id="addToPlaylist" class="btn btn-dark m-3">Add To Playlist</button> *@
+            </form>
+        </div>
+        @* <div>
+            <!-- Update this button to add the song to the playlist -->
+            <form action="/Review/DisplayReviews" method="get">
+                <input type="hidden" name="songId" value="@Model.id" />
+                <button type="submit">Add to Playlist</button>
+            </form>
+        </div> *@
+        <div class="col-9">
+            <table class="table table-hover" name="songTable" id="songTable">
+                <thead>
+                    <tr>
+                        <th>
+                            id @* @Html.DisplayNameFor(model => model.id) *@
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Artist
+                        </th>
+                        <th>
+                            Genre
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="@Html.DisplayFor(modelItem => Model.id)" onclick='onSongClick(@Html.DisplayFor(modelItem => Model.id));'>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.ArtistName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.genre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.description)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

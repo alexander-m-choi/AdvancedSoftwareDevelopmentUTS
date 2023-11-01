@@ -23,11 +23,25 @@ namespace ASDAssignmentUTS.Controllers
             //captures the data from the form that was imputed by the user.
             string name = collection["name"];
             song = SongDBManager.GetSongByName(name);
-            if(song != null)
+            //if song does not match with any song with that name in the database, it will return the song search view else return the search result view.
+            if (song == null)
+            {
+                return View();
+            }
+            else
             {
                 return View(song);
             }
-            return SongSearch();
+
+
+
+        }
+
+      //method to return the view of the song details
+      public ActionResult SongDetails(int id)
+        {
+            Song song = SongDBManager.GetSongById(id);
+            return View(song);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
