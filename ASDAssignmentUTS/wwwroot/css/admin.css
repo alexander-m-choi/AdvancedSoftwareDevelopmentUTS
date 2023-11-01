@@ -1,0 +1,17 @@
+﻿
+.dark-table-hover tbody tr:hover td {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: red;
+    color: white;
+}
+
+.table-background tbody tr {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table-background thead th {
+    background-color: green;
+}
