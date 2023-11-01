@@ -9,6 +9,17 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+stages:
+- stage: 'Build'
+  displayName: 'Build the web application'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    pool:
+      vmImage: 'windows-latest'
+      demands:
+      - npm
+
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
