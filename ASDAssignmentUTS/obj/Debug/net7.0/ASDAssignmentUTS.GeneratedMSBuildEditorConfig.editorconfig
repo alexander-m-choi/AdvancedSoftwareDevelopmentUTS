@@ -9,153 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ASDAssignmentUTS
 build_property.RootNamespace = ASDAssignmentUTS
-build_property.ProjectDir = C:\Users\chris\Source\Repos\alexander-m-choi\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS\
+build_property.ProjectDir = C:\Users\Nebula PC\Documents\GitHub\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chris\Source\Repos\alexander-m-choi\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS
+build_property.MSBuildProjectDirectory = C:\Users\Nebula PC\Documents\GitHub\AdvancedSoftwareDevelopmentUTS\ASDAssignmentUTS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Account/Login.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Account/Settings.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/AddArtist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Account/UserRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyUmVnaXN0cmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/AddArtist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXEFkZEFydGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/AddSong.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/AddSong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXEFkZFNvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/ArtistManagement.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/ArtistManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXEFydGlzdE1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/SongManagement.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/SongManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFNvbmdNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateArtist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateArtist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFVwZGF0ZUFydGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateSong.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminSong/UpdateSong.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Tb25nXFVwZGF0ZVNvbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Create.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Delete.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/ResetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFJlc2V0UGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Update.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/UserManagement.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/AdminUser/UserManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Vc2VyXFVzZXJNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistInformation.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEFydGlzdEluZm9ybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistSearch.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Artist/ArtistSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0XEFydGlzdFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/AdminMenu.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/AdminMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbk1lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/ArtistSearch.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/ArtistSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpc3RTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Home.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Index.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Privacy.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/AddPlaylist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Home/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/AddPlaylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcQWRkUGxheWxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/DeletePlaylist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/DeletePlaylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcRGVsZXRlUGxheWxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/EditPlaylist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/EditPlaylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcRWRpdFBsYXlsaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/PlaylistManagement.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/PlaylistManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcUGxheWxpc3RNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/UpdatePlaylist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/UpdatePlaylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcVXBkYXRlUGxheWxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/ViewPlaylist.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Playlist/ViewPlaylist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcVmlld1BsYXlsaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Review/DisplayReviews.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Review/DisplayReviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XERpc3BsYXlSZXZpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/Error.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongInformation/SongDetails.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongInformation/SongDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ0luZm9ybWF0aW9uXFNvbmdEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SearchResult.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SearchResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1NlYXJjaFxTZWFyY2hSZXN1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SongSearch.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/SongSearch/SongSearch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1NlYXJjaFxTb25nU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/UserRegistration/UserRegistration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJlZ2lzdHJhdGlvblxVc2VyUmVnaXN0cmF0aW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewImports.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewStart.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Source/Repos/alexander-m-choi/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_Layout.cshtml]
+[C:/Users/Nebula PC/Documents/GitHub/AdvancedSoftwareDevelopmentUTS/ASDAssignmentUTS/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2belobot4q

@@ -374,8 +374,8 @@ namespace ASDAssignmentUTS.Services
 
         static public Song GetSongByName(string name)
         {
-            /*try
-            *///{
+            try
+             {
                 Song song = new Song();
                 using (SqlConnection conn = new SqlConnection(connectionStr))
                 {
@@ -396,8 +396,7 @@ namespace ASDAssignmentUTS.Services
                     }
                     if (song.name == "" || song.name == null || song.name != name)
                     {
-                        //throw new SongNotFoundException();
-                        return null;
+                        song = null;
 
                     }
                     conn.Close();
@@ -405,15 +404,15 @@ namespace ASDAssignmentUTS.Services
                 }
                 return song;
 
-           // }
-           /* catch (SqlException e)
+            }
+           catch (SqlException e)
             {
-               // throw new QueryErrorException(e.Message);
+               throw new QueryErrorException(e.Message);
             }
             catch (SongNotFoundException)
             {
-               // throw new SongNotFoundException();
-            }*/
+               throw new SongNotFoundException();
+            }
         }
 
         //this is used for unit testing purposes

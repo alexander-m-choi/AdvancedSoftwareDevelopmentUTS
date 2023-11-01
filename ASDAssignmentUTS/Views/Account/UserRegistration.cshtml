@@ -1,0 +1,60 @@
+@{
+    Layout = null;
+}
+@model ASDAssignmentUTS.Models.RegisterModel
+<link rel="stylesheet" href="~/css/authentication.css">
+
+<div class="auth-container">
+    <div class="notification">
+        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+        {
+            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+        }
+    </div>
+
+    <h2 class="auth-header">Register</h2>
+
+    <form method="post" asp-controller="Account" asp-action="Register" class="auth-form">
+        <div class="form-group">
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" name="Username" required class="form-input"/>
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required class="form-input"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" name="Password" required class="form-input"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirm Password:</label>
+            <input type="password" id="ConfirmPassword" name="ConfirmPassword" required class="form-input"/>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <div class="form-group">
+    <label for="Role">Role:</label>
+    <select id="Role" name="Role" required class="form-input">
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    </form>
+
+    <div class="auth-footer">
+        Already have an account? <a asp-controller="Account" asp-action="Login" class="auth-link">Log in here</a>.
+    </div>
+</div>
