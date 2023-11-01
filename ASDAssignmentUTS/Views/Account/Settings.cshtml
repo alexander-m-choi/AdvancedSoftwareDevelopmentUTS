@@ -54,7 +54,7 @@
         </div>
     </form>
 
-    <form method="get" asp-action="Home" asp-controller="Home" class="auth-form">
+    <form method="get" asp-action="@((bool)ViewData["IsAdmin"] ? "AdminMenu" : "Home")" asp-controller="Home" class="auth-form">
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Return to Home</button>
         </div>

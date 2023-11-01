@@ -184,7 +184,8 @@ public IActionResult Register(RegisterModel model)
 
         public IActionResult Settings()
         {
-
+            bool isAdmin = User.IsInRole("Admin");
+            ViewData["IsAdmin"] = isAdmin;
             return View(); 
         }
 
