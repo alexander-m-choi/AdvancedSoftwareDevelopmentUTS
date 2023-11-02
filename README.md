@@ -34,21 +34,26 @@ Mohammad Aamash Qaisar 14105985
 
 - Home page (A central hub that allows the user to navigate to other features)
 - Song Search system - Users are able to search for the songs in the database
-- Lead of CSS and Azure configurations with the Github repo & project
+- Major contributions to CSS and design
+- Azure configurations co-lead with Alexander
 
 Christopher Averkos 13855580
 
 - All admin side features including User Management, Song Management and Artist Management
+- All these features involve CRUD operations
+- Lead on project authentication and security operations.
 
 Alexander Choi 14254799
 
 - Song Information feature that involved bio of the song, artist details and song details
 - Song Reviews - Users are able to leave reviews for the songs
+- Lead on Azure configurations alongside Aamash
 
 Rowan Liley 14156261
 
 - Playlist Management - Users are able to create new playlists, update and delete them
 - Artist Search - Users can search for their favourite artists
+- Solution Archtiect - Setup SQL database and ASP.NET MVC baseline structure.
 
 Lav Moore 24539734
 
