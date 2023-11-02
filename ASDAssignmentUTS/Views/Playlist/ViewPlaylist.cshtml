@@ -24,7 +24,7 @@
     @foreach (var song in Model.Songs)
     {
         <li>
-            @song.name - @song.artistId
+            @song.name - @song.ArtistName
             <form asp-action="DeleteSongFromPlaylist" asp-controller="Playlist" asp-route-songId="@song.id"
                 asp-route-playlistId="@Model.id" method="post" class="d-inline">
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
