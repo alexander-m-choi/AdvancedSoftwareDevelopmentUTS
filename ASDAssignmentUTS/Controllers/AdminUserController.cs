@@ -5,12 +5,21 @@ using System.Collections.Generic;
 using ASDAssignmentUTS.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using ASDAssignmentUTS.Repositories;
 
 namespace ASDAssignmentUTS.Controllers
 {
     [Authorize(Policy = "AdminPolicy")]
     public class AdminUserController : Controller
     {
+        private readonly UserRepository _userRepository;
+
+        public AdminUserController(UserRepository userRepository)
+        {
+            _userRepository = userRepository;
+            string connectionString = DBConnector.GetConnectionString();
+            _userRepository = new UserRepository(connectionString);
+        }
         // GET: AdminUserController
         public ActionResult UserManagement()
         {
@@ -44,6 +53,18 @@ namespace ASDAssignmentUTS.Controllers
                     collection["password"],
                     collection["email"]
                 );
+
+                // Check if the username exists
+                if (_userRepository.UsernameExists(user.username))
+                {
+                    ModelState.AddModelError("username", "This username is already taken. Please choose another.");
+                }
+                // Check if the email exists
+                if (_userRepository.EmailExists(user.email))
+                {
+                    ModelState.AddModelError("emailAddress", "This email address is already registered. Please use another or log in.");
+                }
+
                 //adds the user to the database.
                 UserDBManager.AddUser(user);
                 return RedirectToAction(nameof(UserManagement));

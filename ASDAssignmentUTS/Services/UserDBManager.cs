@@ -215,7 +215,38 @@ namespace ASDAssignmentUTS.Services
                 throw new Exception("User not found");
             }
         }
+
+        public static bool isUserNameExists(string username)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM RowanUsers WHERE username = @username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch(SqlException e)
+                {
+                    throw new QueryErrorException(e.Message);
+                }
+            }
+        }
     }
+
+
 
     public class UserNotFoundException : Exception
     {
