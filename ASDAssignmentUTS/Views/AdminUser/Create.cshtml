@@ -4,36 +4,66 @@
     ViewData["Title"] = "New User";
 }
 
-<h1>Add User</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="username" class="control-label">Username</label>
-                <input asp-for="username" class="form-control" />
-                <span asp-validation-for="username" class="text-danger"></span>
+<div class=" container text-white">
+    <h1>Add User</h1>
+    <hr />
+    <div class="row form-center">
+        <div class="center admin-form">
+            <div>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="form-error"></div>
+                    <div class="form-group row mb-3">
+                        <div class="col-4">
+                            <label asp-for="username" class="control-label">Username:</label>
+                        </div>
+
+                        <div class="col-8">
+                            <input asp-for="username" class="form-control" />
+                        </div>
+
+                        <span asp-validation-for="username" class="form-error"></span>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <div class="col-4">
+                            <label asp-for="email" class="control-label">Email Address</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="email" class="form-control" />
+                        </div>
+
+                        <span asp-validation-for="email" class="form-error"></span>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <div class="col-4">
+                            <label asp-for="password" class="control-label">Password</label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="password" type="password" class="form-control" />
+                        </div>
+
+                        <span asp-validation-for="password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-buttons">
+                        <a class="btn btn-secondary m-2" asp-action="UserManagement">Cancel</a>
+                        <input type="submit" value="Add" class="btn btn-primary m-2" />
+                    </div>
+                </form>
             </div>
-            
-            <div class="form-group">
-                <label asp-for="email" class="control-label">Email Address</label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="password" class="control-label">Password</label>
-                <input asp-for="password" type="password" class="form-control" />
-                <span asp-validation-for="password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <a class="btn btn-secondary m-2"  asp-action="UserManagement">Cancel</a>
-                <input type="submit" value="Add" class="btn btn-primary m-2" />
-            </div>
-        </form>
+        </div>
     </div>
+    
 </div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
