@@ -1,13 +1,18 @@
 ﻿using ASDAssignmentUTS.Models;
 using ASDAssignmentUTS.Services;
+using ASDAssignmentUTS.Repositories; 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASDAssignmentUTS.Controllers
 {
+    [Authorize(Policy = "AdminPolicy")]
     public class AdminSongController : Controller
     {
         // GET: AdminController
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public ActionResult SongManagement(int? id)
         {
             List<Song> songs;
@@ -30,7 +35,7 @@ namespace ASDAssignmentUTS.Controllers
             List<Song> songs = SongDBManager.GetSongsByArtist(id);
             return View(songs);
         }
-
+        [Authorize(Policy = "AdminPolicy")]
         public ActionResult ArtistManagement()
         {
             List<Artist> artists = ArtistDBManager.GetArtists();

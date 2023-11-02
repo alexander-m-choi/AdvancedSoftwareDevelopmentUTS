@@ -4,59 +4,85 @@
     ViewData["Title"] = "Update Song";
 }
 
-<h1>Update Song</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
 
-<h4>Song</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="UpdateSong">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-           
-            <div class="form-group">
-                <label asp-for="name" class="control-label">Name</label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="artistId" class="control-label">Artist</label>
-                <select asp-for="artistId" class="form-control">
-                    @foreach (var artist in ViewBag.artists)
-                    {
-                        if (artist.id == ViewBag.artistId)
-                        {
-                            <option value="@artist.id" selected>@artist.name</option>
-                        }
-                        else
-                        {
-                            <option value="@artist.id">@artist.name</option>
-                        }
-                    }
-                </select>
-                <span asp-validation-for="ArtistName" class="text-danger"></span>
-            </div>
-           
-           
-            <div class="form-group">
-                <label asp-for="genre" class="control-label">Genre</label>
-                <input asp-for="genre" class="form-control" />
-                <span asp-validation-for="genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="description" class="control-label">Description</label>
-                <textarea asp-for="description" class="form-control" rows="3"></textarea>
-                <span asp-validation-for="description" class="text-danger"></span>
-            </div>
-           
-            <div class="form-group">
-                <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
-                <input type="submit" value="Update" class="btn btn-primary m-2" />
-            </div>
-        </form>
+<div class="container">
+    <h1>Update Song</h1>
+
+    <h4>Song</h4>
+    <hr />
+    <div class="form-center">
+        <div class="admin-form">
+            <form asp-action="UpdateSong">
+                <div asp-validation-summary="ModelOnly" class="form-error"></div>
+
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="name" class="control-label">Name</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="form-error"></span>
+                    </div>
+                    
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="artistId" class="control-label">Artist</label>
+                    </div>
+                    <div class="col-8">
+                        <select asp-for="artistId" class="form-control">
+                            @foreach (var artist in ViewBag.artists)
+                            {
+                                if (artist.id == ViewBag.artistId)
+                                {
+                                    <option value="@artist.id" selected>@artist.name</option>
+                                }
+                                else
+                                {
+                                    <option value="@artist.id">@artist.name</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="ArtistName" class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="genre" class="control-label">Genre</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="genre" class="form-control" />
+                        <span asp-validation-for="genre" class="form-error"></span>
+                    </div>
+                    
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="description" class="control-label">Description</label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="description" class="form-error"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
+                    <input type="submit" value="Update" class="btn btn-primary m-2" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    
-</div>
+
+
+
 

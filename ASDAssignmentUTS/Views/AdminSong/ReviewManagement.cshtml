@@ -4,8 +4,13 @@
     ViewData["Title"] = "Review Management";
 }
 
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
 
 <div class="container">
     <div class="row p-4">
@@ -17,7 +22,7 @@
             <button disabled id="deleteReview" class="btn btn-dark m-3">Delete Review</button>
         </div>
         <div class="col-9">
-            <table class="table table-hover" name="reviewTable" id="reviewTable"">
+            <table class="table text-white table-background dark-table-hover" name="reviewTable" id="reviewTable" ">
                 <thead>
                     <tr>
                         <th>

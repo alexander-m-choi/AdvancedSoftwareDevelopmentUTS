@@ -8,6 +8,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<UserRepository>(serviceProvider =>
     new UserRepository(DBConnector.GetConnectionString()));
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
+});
+
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -29,6 +35,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseAuthentication();
+
 
 app.UseRouting();
 
