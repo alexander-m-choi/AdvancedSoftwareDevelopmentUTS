@@ -1,13 +1,20 @@
 ﻿using ASDAssignmentUTS.Models;
 using ASDAssignmentUTS.Services;
+using ASDAssignmentUTS.Repositories; 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Antiforgery;
+
 
 namespace ASDAssignmentUTS.Controllers
 {
+    [Authorize(Policy = "AdminPolicy")]
     public class AdminSongController : Controller
     {
         // GET: AdminController
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public ActionResult SongManagement(int? id)
         {
             List<Song> songs;
@@ -30,7 +37,7 @@ namespace ASDAssignmentUTS.Controllers
             List<Song> songs = SongDBManager.GetSongsByArtist(id);
             return View(songs);
         }
-
+        [Authorize(Policy = "AdminPolicy")]
         public ActionResult ArtistManagement()
         {
             List<Artist> artists = ArtistDBManager.GetArtists();
@@ -110,8 +117,12 @@ namespace ASDAssignmentUTS.Controllers
             return View(artist);
         }
         [HttpGet]
-        public ActionResult UpdateSong(int id)
+        public ActionResult UpdateSong(int id, int? clickedArtistId)
         {
+            if(clickedArtistId != null)
+            {
+                ViewBag.currentArtistId = clickedArtistId;
+            }
             var song = SongDBManager.GetSongById(id);
             Artist artist = new Artist();
             var allArtist = ArtistDBManager.GetArtists();
@@ -169,6 +180,7 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
@@ -183,12 +195,14 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         // POST: AdminController/Delete/5
+        
         [HttpPost]
-
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteSong(IFormCollection collection)
         {
             try
             {
+                
                 SongDBManager.DeleteSong(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(SongManagement));
             }
@@ -203,6 +217,37 @@ namespace ASDAssignmentUTS.Controllers
             List<Song> songs = SongDBManager.GetSongsByArtist(id);
             ViewBag.ArtistId = id;
             return View(songs);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteReview(IFormCollection collection)
+        {
+            try
+            {
+                ReviewDBManager.DeleteReview(Convert.ToInt32(collection["id"]));
+                return RedirectToAction(nameof(SongManagement));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult ReviewManagement(int? id)
+        {
+            //if the id is not null, then it will get the reviews by the song id.
+            if (id != null)
+            {
+                List<Review> reviews = ReviewDBManager.GetReviewsBySongId(id ?? 0);
+                ViewBag.SongId = id;
+                return View(reviews);
+            }
+            else
+            {
+                List<Review> reviews = ReviewDBManager.GetReviews();
+                return View(reviews);
+            }
         }
     }
 }
