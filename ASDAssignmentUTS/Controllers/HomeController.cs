@@ -1,5 +1,6 @@
 ﻿using ASDAssignmentUTS.Models;
 using ASDAssignmentUTS.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -47,6 +48,7 @@ namespace ASDAssignmentUTS.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         public IActionResult AdminMenu()
         {
             return View();
