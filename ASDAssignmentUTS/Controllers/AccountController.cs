@@ -232,7 +232,7 @@ public ActionResult DeleteConfirmed(IFormCollection collection)
                 ModelState.AddModelError("", "An unexpected error occurred. Please try again.");
                 return View(); // Might need to redirect to a specific view for error feedback
             }
-        }
+        } 
             else
             {
                 StatusMessage = "Invalid username or password.";
