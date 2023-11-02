@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("musicbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+table {
+    color: white;
+}
+
+.table {
+    color: white;
+}
+
+.table button,
+.table a {
+    color: initial;
+}

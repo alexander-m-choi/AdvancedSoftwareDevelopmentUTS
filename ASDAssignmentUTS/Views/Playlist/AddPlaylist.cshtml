@@ -4,6 +4,17 @@
     ViewData["Title"] = "Create Playlist";
 }
 
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/playlist.css" asp-append-version="true" />
+</head>
+
 <h1>Create Playlist</h1>
 
 <form asp-action="AddPlaylist" method="post">
@@ -17,11 +28,7 @@
         <textarea asp-for="description" class="form-control"></textarea>
         <span asp-validation-for="description" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="ownerId" class="control-label"></label>
-        <input asp-for="ownerId" class="form-control" />
-        <span asp-validation-for="ownerId" class="text-danger"></span>
-    </div>
+    <br>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>

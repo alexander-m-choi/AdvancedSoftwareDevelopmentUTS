@@ -1,4 +1,5 @@
 ﻿using ASDAssignmentUTS.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASDAssignmentUTS.Models
 {
@@ -8,6 +9,7 @@ namespace ASDAssignmentUTS.Models
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        [EmailAddress]
         public string email { get; set; }
 
 
