@@ -30,20 +30,33 @@ namespace ASDAssignmentUTS.Controllers
         [HttpPost]
         public IActionResult AddReview(int songId, int stars, string description)
         {
-            // Create a new Review object with the provided data
-            Review newReview = new Review()
+            // Get the username from the session
+            string username = HttpContext.Session.GetString("LoggedInUser");
+            ViewBag.Username = username;
+            int? id = PlaylistDBManager.GetIDByUsername(username);
+
+            if (id.HasValue)
             {
-                Review_Star = stars,
-                Review_Entry = description,
-                User_ID_FK = 12345678, // Set the appropriate user ID
-                Song_ID_FK = songId
-            };
+                //Create new review
+                Review newReview = new Review()
+                {
+                    Review_Star = stars,
+                    Review_Entry = description,
+                    User_ID_FK = id.Value,
+                    Song_ID_FK = songId
+                };
 
-            // Call a method to add the new review to the database
-            ReviewDBManager.DBCreateReview(newReview);
+                // Adds review to the database
+                ReviewDBManager.DBCreateReview(newReview);
 
-            // Redirect back to the review page
-            return RedirectToAction("DisplayReviews", new { songId });
+                // Redirect back to the review page
+                return RedirectToAction("DisplayReviews", new { songId });
+            }
+            else
+            {
+                // Error handling
+                return View("Error");
+            }
         }
     }
 
