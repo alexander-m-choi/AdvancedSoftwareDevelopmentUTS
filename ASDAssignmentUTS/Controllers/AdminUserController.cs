@@ -120,6 +120,11 @@ namespace ASDAssignmentUTS.Controllers
                 };
 
                 int randomCharRange = random.Next(0, 3);
+                //this will regenerate a random number if it is 3 to prevent an index out of range exception.
+                if (randomCharRange == 3)
+                {
+                    randomCharRange = random.Next(0, 3);
+                }
 
                 //this will randomly select a character range from the array and add it to the password string
                 password += charRange[randomCharRange];
