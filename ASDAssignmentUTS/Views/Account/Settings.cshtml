@@ -1,18 +1,62 @@
-<h2>Settings</h2>
+<link rel="stylesheet" href="~/css/authentication.css">
 
-<form method="post" asp-action="DeleteConfirmed" asp-controller="Account">
-    @Html.AntiForgeryToken()
-    <label for="username">Username:</label>
-    <input type="text" name="username" required />
+<div class="auth-container">
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" required />
+    <h2 class="auth-header">Settings</h2>
 
-    <button type="submit">Delete Account</button>
-</form>
-<form method="post" asp-action="Logout" asp-controller="Account">
-    <button type="submit">Logout</button>
-</form>
-<form method="get" asp-action="Home" asp-controller="Home">
-    <button type="submit">Return to Home</button>
-</form>
+    @if (!string.IsNullOrEmpty(TempData["StatusMessage"] as string))
+    {
+        <div class="notification">
+            <div class="alert alert-danger">
+                @TempData["StatusMessage"]
+            </div>
+        </div>
+    }
+
+    <form method="post" asp-action="DeleteConfirmed" asp-controller="Account" class="auth-form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required class="form-input" />
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required class="form-input" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Delete Account</button>
+        </div>
+    </form>
+
+    <form method="post" asp-action="ChangePassword" asp-controller="Account" class="auth-form">
+    <div class="form-group">
+        <label for="currentPassword">Current Password:</label>
+        <input type="password" name="currentPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" name="newPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <label for="confirmNewPassword">Confirm New Password:</label>
+        <input type="password" name="confirmNewPassword" required class="form-input" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Change Password</button>
+    </div>
+    </form>
+
+
+    <form method="post" asp-action="Logout" asp-controller="Account" class="auth-form">
+        <div class="form-group">
+            <button type="submit" class="btn btn-secondary">Logout</button>
+        </div>
+    </form>
+
+    <form method="get" asp-action="@((bool)ViewData["IsAdmin"] ? "AdminMenu" : "Home")" asp-controller="Home" class="auth-form">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Return to Home</button>
+        </div>
+    </form>
+</div>

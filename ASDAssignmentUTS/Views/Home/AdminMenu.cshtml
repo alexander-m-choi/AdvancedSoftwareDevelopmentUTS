@@ -19,8 +19,8 @@
     <main>
         <h1>Admin Menu</h1>
         <br /> <br /> <br />
-        <h1>Hi Andrew!</h1>
-        <p>What do you want to mange?</p>
+        <h1>Hi @User?.Identity?.Name!</h1>
+        <p>What do you want to manage?</p>
         <div class="intro">
             <button><a class="nav-link text-dark" asp-controller="AdminUser" asp-action="UserManagement">User Management</a></button>
             <p></p>
@@ -29,6 +29,15 @@
             <button><a class="nav-link text-dark" asp-controller="AdminSong" asp-action="ArtistManagement">Artist Management</a></button>
             <p></p>
             <button><a class="nav-link text-dark" asp-controller="AdminSong" asp-action="ReviewManagement">Review Management</a></button>
+
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <a asp-controller="Account" asp-action="Settings" class="btn btn-primary">Settings</a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+            }
         </div>
     </main>
 
