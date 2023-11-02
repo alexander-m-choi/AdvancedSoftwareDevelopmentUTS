@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = "Song Details";
 }
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +12,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/alexStyles.css" />
+    <link rel="stylesheet" href="~/css/alexStyles.css" asp-append-version="true" />
 </head>
 <body>
     <h1>Song Details</h1>
