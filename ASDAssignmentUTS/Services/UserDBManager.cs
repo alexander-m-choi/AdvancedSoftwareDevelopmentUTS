@@ -18,7 +18,9 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM RowanUsers";
+                    //the admin user will not be displayed in the user list to prevent the admin from acidentally deleting their own account.
+                    command.CommandText = "SELECT * FROM RowanUsers WHERE NOT Role = @admin";
+                    command.Parameters.AddWithValue("@admin", "Admin");
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -44,10 +46,11 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = @"INSERT INTO RowanUsers (id, username, password, email) VALUES ((SELECT COALESCE(MAX(id), 0) + 1 FROM RowanUsers), @username, @password, @email)";
+                    command.CommandText = @"INSERT INTO RowanUsers (id, username, password, email, Role) VALUES ((SELECT COALESCE(MAX(id), 0) + 1 FROM RowanUsers), @username, @password, @email, @role)";
                     command.Parameters.AddWithValue("@username", user.username);
                     command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
+                    command.Parameters.AddWithValue("@role", "User");
                     command.ExecuteNonQuery();
                 };
             }
@@ -61,10 +64,9 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = @"UPDATE RowanUsers SET username = @username, password = @password, email = @email WHERE id = @id";
+                    command.CommandText = @"UPDATE RowanUsers SET username = @username, email = @email WHERE id = @id";
                     command.Parameters.AddWithValue("@id", user.id);
                     command.Parameters.AddWithValue("@username", user.username);
-                    command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
                     command.ExecuteNonQuery();
                 };
@@ -159,7 +161,92 @@ namespace ASDAssignmentUTS.Services
                 throw new UserNotFoundException();
             }
         }
+
+        //this will be use to reset the users password from the admin side and generate a temporary password for the user.
+        public static void ResetPassword(int id, string newPassword)
+        {
+            try
+            {
+                User user = new User();
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"UPDATE RowanUsers SET password = @password WHERE id = @id";
+                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@password", newPassword);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch
+            {
+                throw new Exception("User not found");
+            }
+        }
+
+        //this will be used to get the user's password from the database after its being regenerated for the user upon reset password.
+        public static string GetPassword(int id)
+        {
+            try
+            {
+                User user = new User();
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.CommandText = @"SELECT password FROM RowanUsers WHERE id = @id";
+                        command.Parameters.AddWithValue("@id", id);
+                        var reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            user.password = reader.GetString(0);
+                        }
+                    }
+                }
+                return user.password;
+            }
+            catch
+            {
+                throw new Exception("User not found");
+            }
+        }
+
+        public static bool isUserNameExists(string username)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM RowanUsers WHERE username = @username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@username", username);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch(SqlException e)
+                {
+                    throw new QueryErrorException(e.Message);
+                }
+            }
+        }
     }
+
+
 
     public class UserNotFoundException : Exception
     {

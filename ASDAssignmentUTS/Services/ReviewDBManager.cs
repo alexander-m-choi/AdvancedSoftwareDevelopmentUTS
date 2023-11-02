@@ -77,6 +77,20 @@ namespace ASDAssignmentUTS.Services
             return artistName;
         }
 
+        //deletes the review from the database
+        public static void DeleteReview(int id)
+        {
+            using(SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                conn.Open();
+                string sql = @"DELETE FROM reviewAlex WHERE Review_ID = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
         public static List<Review> GetReviewsBySongId(int songId)
         {
             List<Review> reviews = new List<Review>();

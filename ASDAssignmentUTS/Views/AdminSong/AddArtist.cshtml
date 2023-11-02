@@ -4,45 +4,68 @@
     ViewData["Title"] = "Add Artist";
 }
 
-<h1>Add Artist</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="AddArtist">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--div class="form-group">
-                label asp-for="id" class="control-label"></label>
-                <input asp-for="id" class="form-control" />
-                <span asp-validation-for="id" class="text-danger"></span>
-            </!-->
-            <div class="form-group">
-                <label asp-for="name" class="control-label">Name</label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="genre" class="control-label">Genre</label>
-                <input asp-for="genre" class="form-control" />
-                <span asp-validation-for="genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="country" class="control-label">Country</label>
-                <input asp-for="country" class="form-control" />
-                <span asp-validation-for="country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="description" class="control-label">Description</label>
-                <textarea asp-for="description" class="form-control" rows="3"></textarea>
-                <span asp-validation-for="description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
-                <input type="submit" value="Add" class="btn btn-primary" />
-            </div>
-        </form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+
+<div class="container">
+    <h1>Add Artist</h1>
+
+    <hr />
+    <div class="form-center row">
+        <div class="admin-form">
+            <form asp-action="AddArtist">
+                <div asp-validation-summary="ModelOnly" class="form-error"></div>
+                <div class="form-group row mb-3">
+                    <div class="col-4"> 
+                        <label asp-for="name" class="control-label">Name</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="genre" class="control-label">Genre</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="genre" class="form-control" />
+                        <span asp-validation-for="genre" class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="country" class="control-label">Country</label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="country" class="form-control" />
+                        <span asp-validation-for="country" class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="description" class="control-label">Description</label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="description" class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group form-buttons">
+                    <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
+                    <input type="submit" value="Add" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
 
 
 

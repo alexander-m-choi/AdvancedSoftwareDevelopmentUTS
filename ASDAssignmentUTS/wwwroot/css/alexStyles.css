@@ -1,38 +1,46 @@
-﻿* {
-
-}
-
+﻿
 h1 {
-    font-family: 'Gill Sans';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin-top: 0;
+    color: white;
+}
+
+label{
+    color:white;
 }
 
 body {
     width: 100%;
-    background: linear-gradient(to bottom, #406455, #000000);
-    color: white;
+    height: 100%;
+    background-image: url("musicbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 p {
     font-family: 'Gill Sans';
     text-align: center;
+    color: white;
     font-size: 20px;
     margin-top: 0;
-    color: white;
 }
 
+
+
 button {
-    font-family: Gill Sans;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     border: 5px solid black;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     display: block;
     margin: auto;
     font-size: 20px;
     padding: 10px 59px;
     margin-top: 50px;
+    border-radius: 40px;
 }
 
     button.center {
@@ -40,22 +48,18 @@ button {
         margin-right: auto;
     }
 
-.table-white-text {
+footer {
     width: 100%;
-    border-collapse: collapse;
+    height: 60px;
 }
 
-    .table-white-text th {
-        background-color: darkslateblue;
-        color: white;
-    }
-
-    .table-white-text tr {
-        background-color: cadetblue;
-    }
-
-    .table-white-text th, .table-white-text td {
-        padding: 8px;
-        text-align: left;
-    }
-
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}

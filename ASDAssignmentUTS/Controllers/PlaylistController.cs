@@ -5,23 +5,55 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ASDAssignmentUTS.Models;
 using System.Diagnostics;
-
+using ASDAssignmentUTS.Repositories;
+using System.Security.Claims;
 namespace ASDAssignmentUTS.Controllers
 {
     public class PlaylistController : Controller
     {
+        private readonly UserRepository _userRepository;
 
         public ActionResult PlaylistManagement()
         {
-            List<Playlist> playlists = PlaylistDBManager.GetPlaylists();
+            string? username = HttpContext.Session.GetString("LoggedInUser");
+
+            var name = HttpContext.Session.GetString("LoggedInUser");
+
+            ViewBag.Username = name;
+
+
+            int? id = PlaylistDBManager.GetIDByUsername(username);
+
+            List<Playlist> playlists = PlaylistDBManager.GetPlaylistsByUserId(id.Value);
+            //return the view with the playlist
             return View(playlists);
         }
-        // GET: PlaylistController/Create
+
+
+        /*public ActionResult PlaylistManagement()
+        {
+            // Get the user username from UserRepository.GetUserIdByUsername() and then pass it to PlaylistDBManager.GetPlaylistsByUserId()
+            // to get the playlists for the current user
+            var userId = _userRepository.GetUserIdByUsername(User.Identity.Name);
+            List<Playlist> playlists = PlaylistDBManager.GetPlaylistsByUserId(userId);
+            return View(playlists);
+        }*/
+
+        // GET: PlaylistController/AddPlaylist
+        // GET: PlaylistController/AddPlaylist
         public ActionResult AddPlaylist()
         {
-            return View();
-        }
+            // Get the current user's username from the session
+            string? username = HttpContext.Session.GetString("LoggedInUser");
 
+            // Get the current user's ID
+            int? id = PlaylistDBManager.GetIDByUsername(username);
+
+            // Create a new Playlist object with the OwnerId set to the current user's ID
+            var playlist = new Playlist { ownerId = id.Value };
+
+            return View(playlist);
+        }
         // POST: PlaylistController/AddPlaylist
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -29,8 +61,16 @@ namespace ASDAssignmentUTS.Controllers
         {
             try
             {
-                //adds the playlist to the database.
+                // Get the current session id
+                string? username = HttpContext.Session.GetString("LoggedInUser");
+                int? id = PlaylistDBManager.GetIDByUsername(username);
+
+                // Set the OwnerId of the new playlist to the current session id
+                playlist.ownerId = id.Value;
+
+                // Add the playlist to the database
                 PlaylistDBManager.AddPlaylist(playlist);
+
                 return RedirectToAction(nameof(PlaylistManagement));
             }
             catch
@@ -83,6 +123,15 @@ namespace ASDAssignmentUTS.Controllers
         {
             var playlist = PlaylistDBManager.GetPlaylistById(id);
             return View(playlist);
+        }
+
+        public IActionResult DeleteSongFromPlaylist()
+        {
+            //get the playlist id and song id from the query string
+            var playlistId = int.Parse(Request.Query["playlistId"]);
+            var songId = int.Parse(Request.Query["songId"]);
+            PlaylistDBManager.RemoveSongFromPlaylist(playlistId, songId);
+            return View();
         }
 
         [HttpPost]

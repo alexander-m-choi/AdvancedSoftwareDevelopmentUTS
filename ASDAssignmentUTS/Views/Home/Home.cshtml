@@ -23,11 +23,14 @@
             <h1>Hi @User?.Identity?.Name!</h1>
             <p>Welcome to Music Box Directory</p>
         <div class="intro">
+            <p></p>
             <button> <a class="nav-link text-dark" asp-area="" asp-controller="SongSearch" asp-action="SongSearch">Search for a Song</a></button>
             <p></p>
-            <button><a class="nav-link text-dark" asp-area="" asp-controller="Playlist" asp-action="PlaylistManagement">View Playlists</a></button>
+            <button> <a class="nav-link text-dark" asp-area="" asp-controller="ArtistSearch" asp-action="ArtistSearch">Search for an Artist</a></button>
             <p></p>
-            @if (User?.Identity?.IsAuthenticated ?? false)
+            <button><a class="nav-link text-dark" asp-area="" asp-controller="Playlist" asp-action="PlaylistManagement">View Playlists</a></button>
+           <p></p>
+            @* @if (User?.Identity?.IsAuthenticated ?? false)
             {
                 <a asp-controller="Account" asp-action="Settings" class="btn btn-primary">Settings</a>
             }
@@ -35,7 +38,7 @@
             {
                 <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
             }
-        </div>
+        </div> *@
     </main>
 
 </body>

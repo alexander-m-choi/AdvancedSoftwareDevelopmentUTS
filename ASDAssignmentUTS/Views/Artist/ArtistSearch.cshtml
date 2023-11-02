@@ -2,9 +2,15 @@
 <!DOCTYPE html>
 <html>
 
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Artists</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/playlist.css" asp-append-version="true" />
     <style>
         tr.hidden {
             display: none;
@@ -16,13 +22,11 @@
     <input type="text" id="filter" placeholder="Filter by name">
     <table>
         <tr>
-            <th>ID</th>
             <th>Name</th>
         </tr>
         @foreach (var artist in Model)
         {
             <tr>
-                <td>@artist.id</td>
                 <td>@artist.name</td>
                 <td><a href="@Url.Action("ArtistInformation", "ArtistInformation", new { artistid = artist.id })"
                         class="info-button">Information</a></td>
