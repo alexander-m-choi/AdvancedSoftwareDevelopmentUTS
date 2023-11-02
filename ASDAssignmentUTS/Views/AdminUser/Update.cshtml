@@ -31,8 +31,8 @@
                     </div>
                     <div class="col-8">
                         <input asp-for="username" class="form-control" />
+                        <span asp-validation-for="username" class="form-error"></span>
                     </div>
-                    <span asp-validation-for="username" class="form-error"></span>
                 </div>
                 <div class="form-group row mb-3">
                     <div class="col-4">
@@ -40,8 +40,8 @@
                     </div>
                     <div class="col-8">
                         <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="form-error"></span>
                     </div>
-                    <span asp-validation-for="email" class="form-error"></span>
                 </div>
                 <div class="form-group" hidden>
                     <label asp-for="password" class="control-label"></label>

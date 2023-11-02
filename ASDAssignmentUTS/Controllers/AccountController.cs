@@ -274,14 +274,19 @@ namespace ASDAssignmentUTS.Controllers
             return RedirectToAction("Settings");
         }
 
-
-
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            TempData.Clear();
+            HttpContext.Session.Clear();
+
+            // Clear all cookies
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie);
+            }
             return RedirectToAction("Login");
         }
-
     }
 }

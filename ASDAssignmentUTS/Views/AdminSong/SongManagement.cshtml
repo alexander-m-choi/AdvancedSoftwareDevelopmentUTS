@@ -4,21 +4,37 @@
     ViewData["Title"] = "Song Management";
 }
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+</head>
+@Html.AntiForgeryToken();
 <div class="container">
     <div class="row p-4">
         <h1 class="center">Song Management</h1>
     </div>
 
-
-
     <div class="row">
-        <div class="col-2 p-1">
-            @Html.ActionLink("New Song", "AddSong", new {  id = ViewBag.ArtistId }, new {@class = "btn btn-primary m-3"})
-            <button disabled id="updateSong" class="btn btn-primary m-3">Update Song</button>
-            <button disabled id="deleteSong" class="btn btn-dark m-3">Delete Song</button>
+        <div class="col-2 me-5">
+            <div class="row">
+                @Html.ActionLink("New Song", "AddSong", new {  id = ViewBag.ArtistId }, new {@class = "btn btn-primary m-3"})
+            </div>
+            <div class="row">
+                <button disabled id="updateSong" class="btn btn-primary m-3">Update Song</button>
+            </div>
+            <div class="row">
+                <button disabled id="deleteSong" class="btn btn-danger m-3">Delete Song</button>
+            </div>
+            <div class="row">
+                <button disabled id="viewReviews" class="btn btn-primary m-3">View Reviews</button>
+            </div>
+            
         </div>
         <div class="col-9">
-            <table class="table table-hover" name="songTable" id="songTable">
+            <table class="table text-white table-background dark-table-hover" name="songTable" id="songTable">
                 <thead>
                     <tr>
                         <th>
@@ -42,24 +58,49 @@
                 <tbody>
                     @foreach (var song in Model)
                     {
-                        <tr id="@Html.DisplayFor(modelItem => song.id)" onclick='onSongClick(@Html.DisplayFor(modelItem => song.id));'>
-                            <td>
-                                @Html.DisplayFor(modelItem => song.id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => song.name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => song.ArtistName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => song.genre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => song.description)
-                            </td>
-                        </tr>
-                    }
+                        @if(ViewBag.artistId != null)
+                        {
+                            <tr id="@song.id" onclick='onSongClick(@song.id, @ViewBag.artistId);'>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.ArtistName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.genre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.description)
+                                </td>
+                            </tr>
+                        }
+                        else 
+                        {
+                            <tr id="@song.id" onclick='onSongClick(@song.id, 0);'>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.ArtistName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.genre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => song.description)
+                                </td>
+                            </tr>
+                        }
+                        
+                            
+                }
                 </tbody>
             </table>
         </div>
