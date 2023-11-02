@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
 </head>
-
+@Html.AntiForgeryToken();
 <div class="row p-4">
     <h1 class="center">User Management</h1>
 </div>
 
 <div class="row">
-    <div class="col-2">
-        <a class="btn btn-primary m-3" asp-action="Create">Add User</a>
-        <button disabled class="btn btn-primary m-3" id="updateUser" >Update User</button>
-        <button disabled class="btn btn-danger m-3" id="deleteUser">Delete User</button>
+    <div class="col-2 me-5">
+        <div class="row">
+            <a class="btn btn-primary m-3" asp-action="Create">Add User</a>
+        </div>
+        <div class="row">
+            <button disabled class="btn btn-primary m-3" id="updateUser">Update User</button>
+        </div>
+        <div class="row">
+            <button disabled class="btn btn-danger m-3" id="deleteUser">Delete User</button>
+        </div>
     </div>
-    
-    <div class="col-10">
+    <div class="col-9">
         <table class="text-white table table-background dark-table-hover " id="userTable">
             <thead>
                 <tr>

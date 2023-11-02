@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ASDAssignmentUTS.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASDAssignmentUTS.Controllers
 {
+    [Authorize(Policy = "AdminPolicy")]
     public class AdminUserController : Controller
     {
         // GET: AdminUserController
@@ -33,8 +35,8 @@ namespace ASDAssignmentUTS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
-            //try
-            //{
+            try
+            {
                 //creates a new user object instance.
                 User user = new User
                 (
@@ -45,11 +47,11 @@ namespace ASDAssignmentUTS.Controllers
                 //adds the user to the database.
                 UserDBManager.AddUser(user);
                 return RedirectToAction(nameof(UserManagement));
-            //}
-            //catch
-            //{
-              //  return View();
-            //}
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: AdminUserController/Edit/5
@@ -82,14 +84,9 @@ namespace ASDAssignmentUTS.Controllers
             }
         }
 
-        // GET: AdminUserController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: AdminUserController/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(IFormCollection collection)
         {
             try
