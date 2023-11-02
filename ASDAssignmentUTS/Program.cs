@@ -5,6 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); 
+    options.Cookie.HttpOnly = true; 
+});
+
 builder.Services.AddScoped<UserRepository>(serviceProvider =>
     new UserRepository(DBConnector.GetConnectionString()));
 
@@ -29,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseAuthentication();
+
+app.UseSession();
 
 app.UseRouting();
 
