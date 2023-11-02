@@ -4,10 +4,21 @@
     ViewData["Title"] = "Playlist";
 }
 
-<h1>Playlist</h1>
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/playlist.css" asp-append-version="true" />
+</head>
+
+<h1>@ViewBag.Username's Playlists</h1>
 
 <p>
-    <a asp-action="AddPlaylist">Add Playlist</a>
+    <a asp-action="AddPlaylist" class="btn btn-primary">Add Playlist</a>
 </p>
 <table class="table">
     <thead>
@@ -20,9 +31,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ownerId)
             </th>
         </tr>
     </thead>
@@ -38,9 +46,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ownerId)
                 </td>
                 <td>
                     <button class="btn btn-primary" onclick="confirmView(@item.id)">View</button>

@@ -1,13 +1,17 @@
 ﻿using ASDAssignmentUTS.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace ASDAssignmentUTS.Models
 {
+
     public class User
     {
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        [EmailAddress]
         public string email { get; set; }
+
 
         //this is used to add to the database.
         public User(string username, string password, string email)
