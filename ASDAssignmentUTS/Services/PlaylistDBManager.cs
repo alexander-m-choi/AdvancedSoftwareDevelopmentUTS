@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
 using System.Diagnostics;
+using Microsoft.Identity.Client;
 
 namespace ASDAssignmentUTS.Services;
 public static class PlaylistDBManager
@@ -36,6 +37,85 @@ public static class PlaylistDBManager
         return playlists;
     }
 
+    public static List<Playlist> GetPlaylistsByUserId(int? userId)
+    {
+        List<Playlist> playlists = new List<Playlist>();
+        using (var connection = new SqlConnection(connectionString))
+        {
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Playlist WHERE ownerId = @userId";
+                command.Parameters.AddWithValue("@userId", userId);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Playlist playlist = new Playlist
+                    (
+                        reader.GetInt32(0), // id
+                        reader.GetString(1), // name
+                        reader.GetString(2), // description
+                        reader.GetInt32(3) // ownerId
+                    );
+                    playlists.Add(playlist);
+                }
+            }
+        }
+        return playlists;
+    }
+
+    //I want to pass the username in first from the session, to get the ID of the user. Then we can pass that ID into the GetPlaylistsByUserId method
+    public static int? GetIDByUsername(string username)
+    {
+        int? userId = null;
+        using (var connection = new SqlConnection(connectionString))
+        {
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT ID FROM RowanUsers WHERE username = @username";
+                command.Parameters.AddWithValue("@username", username);
+                var reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    userId = reader.GetInt32(0);
+                }
+            }
+        }
+        return userId;
+    }
+
+
+
+    public static List<Playlist> GetPlaylistsByUserId(int userId)
+    {
+        List<Playlist> playlists = new List<Playlist>();
+        using (var connection = new SqlConnection(connectionString))
+        {
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Playlist WHERE ownerId = @ownerId";
+                command.Parameters.AddWithValue("@ownerId", userId);
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Playlist playlist = new Playlist
+                    (
+                        reader.GetInt32(0), // id
+                        reader.GetString(1), // name
+                        reader.GetString(2), // description
+                        reader.GetInt32(3) // ownerId
+                    );
+                    playlists.Add(playlist);
+                }
+            }
+        }
+        return playlists;
+    }
     //add playlist
 
     public static void AddPlaylist(Playlist playlist)
@@ -148,7 +228,7 @@ public static class PlaylistDBManager
             using (var command = new SqlCommand())
             {
                 command.Connection = connection;
-                command.CommandText = "SELECT name, artist_id FROM SongToPlaylist JOIN Song ON SongToPlaylist.songID = Song.id WHERE playlistID = @playlistId";
+                command.CommandText = "SELECT SongToPlaylist.songID, Song.name, Song.artist_id FROM SongToPlaylist JOIN Song ON SongToPlaylist.songID = Song.id WHERE SongToPlaylist.playlistID = @playlistId";
                 command.Parameters.AddWithValue("@playlistId", id);
 
                 using (var reader = command.ExecuteReader())
@@ -157,8 +237,9 @@ public static class PlaylistDBManager
                     while (reader.Read())
                     {
                         var song = new Song();
-                        song.name = reader.GetString(0);
-                        song.artistId = reader.GetInt32(1);
+                        song.id = reader.GetInt32(0);
+                        song.name = reader.GetString(1);
+                        song.artistId = reader.GetInt32(2);
                         playlist.Songs.Add(song);
                     }
                 }
@@ -168,19 +249,15 @@ public static class PlaylistDBManager
     }
     public static void RemoveSongFromPlaylist(int playlistID, int songID)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (var connection = new SqlConnection(connectionString))
         {
             connection.Open();
-
-            // Construct the SQL query to delete the row from the SongToPlaylist table
-            string query = "DELETE FROM SongToPlaylist WHERE playlistID = @playlistID AND songID = @songID";
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (var command = new SqlCommand())
             {
-                // Add the parameters to the command
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM SongToPlaylist WHERE playlistID = @playlistID AND songID = @songID";
                 command.Parameters.AddWithValue("@playlistID", playlistID);
                 command.Parameters.AddWithValue("@songID", songID);
-
-                // Execute the command
                 command.ExecuteNonQuery();
             }
         }
