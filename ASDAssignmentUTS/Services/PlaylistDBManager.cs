@@ -262,4 +262,47 @@ public static class PlaylistDBManager
             }
         }
     }
+
+    //create a method to add a song to a playlist by passing in the playlistID and songID. i also need a songtoplaylist id. So i need to get the last songtoplaylist id and increment it by 1
+    public static void AddSongToPlaylist(int songID, int playlistID) // swap the order of parameters
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "INSERT INTO SongToPlaylist (ID, songID, playlistID) VALUES (@ID, @songID, @playlistID)"; // swap the order of songID and playlistID in the query
+            SqlCommand command = new SqlCommand(query, connection);
+
+            // Retrieve the last ID value from the SongToPlaylist table and increment it by one.
+            int lastId = 0;
+            string getLastIdQuery = "SELECT TOP 1 ID FROM SongToPlaylist ORDER BY ID DESC";
+            using (SqlCommand getLastIdCommand = new SqlCommand(getLastIdQuery, connection))
+            {
+                connection.Open();
+                var reader = getLastIdCommand.ExecuteReader();
+                if (reader.Read())
+                {
+                    lastId = reader.GetInt32(0);
+                }
+                connection.Close();
+            }
+            int newId = lastId + 1;
+
+            command.Parameters.AddWithValue("@ID", newId);
+            command.Parameters.AddWithValue("@songID", songID); // swap the order of songID and playlistID in the parameters
+            command.Parameters.AddWithValue("@playlistID", playlistID);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                // Log or display the exception details for debugging.
+                Console.WriteLine("SQL Exception: " + ex.Message);
+                Console.WriteLine("Error Number: " + ex.Number);
+                // Additional error handling as needed.
+                throw; // Rethrow the exception to handle it in the controller if necessary.
+            }
+        }
+    }
 }

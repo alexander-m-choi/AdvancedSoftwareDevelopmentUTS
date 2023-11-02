@@ -8,12 +8,14 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/alexStyles.css" asp-append-version="true" />
 </head>
+
 <body>
     <h1>Song Details</h1>
 
@@ -32,13 +34,11 @@
         </form>
     </div>
 
-    <div>
-        <!-- Update this button to add the song to the playlist -->
-        <form action="/Review/DisplayReviews" method="get">
-            <input type="hidden" name="songId" value="@Model.id" />
-            <button type="submit">Add to Playlist</button>
-        </form>
-    </div>
-</body>
-</html>
+    <form asp-controller="SongInformation" asp-action="ShowPlaylists" method="get">
+        <input type="hidden" name="songId" value="@Model.id" />
+        <button type="submit">Add to Playlist</button>
+    </form>
 
+</body>
+
+</html>
