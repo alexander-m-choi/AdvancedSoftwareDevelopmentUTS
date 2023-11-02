@@ -11,17 +11,25 @@
     <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
 </head>
-
+@Html.AntiForgeryToken();
 <div class="container">
     <div class="row p-4">
         <h1 class="center">Artist Management</h1>
     </div>
     <div class="row">
-        <div class="col-2 p-1">
-            <a class="btn btn-primary m-3" asp-action="AddArtist">New Artist</a>
-            <button disabled id="updateArtist" class="btn btn-primary m-3">Update Artist</button>
-            <button disabled id="deleteArtist" class="btn btn-danger m-3">Delete Artist</button>
-            <button disabled id="viewSongs" class="btn btn-primary m-3">View Songs</button>
+        <div class="col-2 me-5">
+            <div class="row">
+                <a class="btn btn-primary m-3" asp-action="AddArtist">New Artist</a>
+            </div>
+            <div class="row">
+                <button disabled id="updateArtist" class="btn btn-primary m-3">Update Artist</button>
+            </div>
+            <div class="row">
+                <button disabled id="deleteArtist" class="btn btn-danger m-3">Delete Artist</button>
+            </div>
+            <div class="row">
+                <button disabled id="viewSongs" class="btn btn-primary m-3">View Songs</button>
+            </div>
         </div>
         <div class="col-9">
             <table class="table text-white table-background dark-table-hover" id="artistTable">

@@ -4,6 +4,8 @@ using ASDAssignmentUTS.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Antiforgery;
+
 
 namespace ASDAssignmentUTS.Controllers
 {
@@ -178,6 +180,7 @@ namespace ASDAssignmentUTS.Controllers
 
         // POST: AdminController/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteArtist(int id, IFormCollection collection)
         {
             try
@@ -192,12 +195,14 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         // POST: AdminController/Delete/5
+        
         [HttpPost]
-
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteSong(IFormCollection collection)
         {
             try
             {
+                
                 SongDBManager.DeleteSong(Convert.ToInt32(collection["id"]));
                 return RedirectToAction(nameof(SongManagement));
             }
@@ -215,6 +220,7 @@ namespace ASDAssignmentUTS.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteReview(IFormCollection collection)
         {
             try

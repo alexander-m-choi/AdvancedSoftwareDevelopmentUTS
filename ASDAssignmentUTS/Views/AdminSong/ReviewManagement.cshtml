@@ -13,13 +13,17 @@
 </head>
 
 <div class="container">
+    @Html.AntiForgeryToken();
     <div class="row p-4">
         <h1 class="center">Review Management</h1>
     </div>
 
     <div class="row">
-        <div class="col-2 p-1">
-            <button disabled id="deleteReview" class="btn btn-dark m-3">Delete Review</button>
+        <div class="col-2 me-5">
+            <div class="row">
+                <button disabled id="deleteReview" class="btn btn-danger m-3">Delete Review</button>
+            </div>
+            
         </div>
         <div class="col-9">
             <table class="table text-white table-background dark-table-hover" name="reviewTable" id="reviewTable" ">

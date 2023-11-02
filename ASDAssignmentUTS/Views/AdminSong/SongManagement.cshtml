@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
 </head>
-
+@Html.AntiForgeryToken();
 <div class="container">
     <div class="row p-4">
         <h1 class="center">Song Management</h1>
@@ -26,7 +26,7 @@
                 <button disabled id="updateSong" class="btn btn-primary m-3">Update Song</button>
             </div>
             <div class="row">
-                <button disabled id="deleteSong" class="btn btn-dark m-3">Delete Song</button>
+                <button disabled id="deleteSong" class="btn btn-danger m-3">Delete Song</button>
             </div>
             <div class="row">
                 <button disabled id="viewReviews" class="btn btn-primary m-3">View Reviews</button>

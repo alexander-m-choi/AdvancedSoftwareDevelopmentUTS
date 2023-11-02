@@ -13,16 +13,25 @@ var currentArtistId = 0;
 //this is a function to delete a selected song from the admin song management inside a table
 $(document).ready(function () {
     $("#deleteSong").click(function () {
+        var token = $('[name=__RequestVerificationToken]').val()
         if (confirm("Are you sure you want to delete this song?")) {
-            //var token = $('input[name="__RequestVerificationToken"]').val(); // Get the token value
+        
+            console.log(token);
             $.ajax({
                 url: '/AdminSong/DeleteSong',
                 type: 'POST',
+                headers: {
+                    "RequestVerificationToken": token
+                },
                 data: {
                     "id": clickedSongId
                     
                 },
+                error: function () {
+                    alert("Error deleting song")
+                },
                 success: function (result) {
+                    alert("Song deleted successfully")
                     window.location.reload();
                 }
             })
@@ -41,14 +50,22 @@ $(document).ready(function () {
 
     //this will be used to delete the selected artist from the admin artist management
     $("#deleteArtist").click(function () {
+        var token = $('[name=__RequestVerificationToken]').val()
         if (confirm("Are you sure you want to delete this artist?")) {
             $.ajax({
                 url: '/AdminSong/DeleteArtist',
                 type: 'POST',
+                headers: {
+                    "RequestVerificationToken": token
+                },
                 data: {
                     "id": clickedArtistId
                 },
+                error: function () {
+                    alert("Error deleting artist")
+                },
                 success: function (result) {
+                    alert("Artist deleted successfully")
                     window.location.reload();
                 }
             })
@@ -94,6 +111,7 @@ $("#viewReviews").click(function () {
 
     //deletes the review
     $("#deleteReview").click(function () {
+        var token = $('[name=__RequestVerificationToken]').val()
         if (confirm("Are you sure you want to delete this review?")) {
             $.ajax({
                 url: '/AdminSong/DeleteReview',
@@ -101,7 +119,14 @@ $("#viewReviews").click(function () {
                 data: {
                     "id": clickedReviewId
                 },
+                headers: {
+                    "RequestVerificationToken": token
+                },
+                error: function () {
+                    alert("Error deleting review")
+                },
                 success: function (result) {
+                    alert("Review deleted successfully")
                     window.location.reload();
                 }
             })
