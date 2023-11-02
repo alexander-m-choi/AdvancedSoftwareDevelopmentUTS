@@ -74,7 +74,16 @@
                 </div>
 
                 <div class="form-group">
-                    <a class="btn btn-secondary m-2" asp-controller="Home" asp-action="AdminMenu">Cancel</a>
+                    @if(ViewBag.currentArtistId != null)
+                    {
+                        @Html.ActionLink("Cancel", "SongManagement", new { id = ViewBag.currentArtistId }, new { @class = "btn btn-primary m-2" })
+                    }
+                    else
+                    {
+                        <a class="btn btn-secondary m-2" asp-controller="AdminSong" asp-action="SongManagement">Cancel</a>
+                    }
+
+                    
                     <input type="submit" value="Update" class="btn btn-primary m-2" />
                 </div>
             </form>

@@ -8,6 +8,7 @@ var clickedSongId = 0;
 var clickedArtistId = 0;
 var clickedUserId = 0;
 var clickedReviewId = 0;
+var currentArtistId = 0;
 
 //this is a function to delete a selected song from the admin song management inside a table
 $(document).ready(function () {
@@ -30,7 +31,12 @@ $(document).ready(function () {
 
     //routes to the update song page
     $("#updateSong").click(function () {
-        window.location.href = "/AdminSong/UpdateSong/" + clickedSongId;
+        if (currentArtistId > 0) {
+            window.location.href = "/AdminSong/UpdateSong/?id=" + clickedSongId + "&clickedArtistId=" + currentArtistId;
+        } else {
+            window.location.href = "/AdminSong/UpdateSong/" + clickedSongId;
+        }
+        
     });
 
     //this will be used to delete the selected artist from the admin artist management
@@ -104,9 +110,10 @@ $("#viewReviews").click(function () {
 })
 
 //this function will listen to the click event on the table row and highlight the row
-function onSongClick(id) {
+function onSongClick(id, artistId) {
     //listens to the song iD that was clicked and stores it in a variable
     clickedSongId = id;
+    currentArtistId = artistId;
     //enables the buttons
     $("#deleteSong").prop("disabled", false);
     $("#updateSong").prop("disabled", false);

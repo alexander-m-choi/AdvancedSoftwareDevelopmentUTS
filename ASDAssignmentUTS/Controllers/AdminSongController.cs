@@ -115,8 +115,12 @@ namespace ASDAssignmentUTS.Controllers
             return View(artist);
         }
         [HttpGet]
-        public ActionResult UpdateSong(int id)
+        public ActionResult UpdateSong(int id, int? clickedArtistId)
         {
+            if(clickedArtistId != null)
+            {
+                ViewBag.currentArtistId = clickedArtistId;
+            }
             var song = SongDBManager.GetSongById(id);
             Artist artist = new Artist();
             var allArtist = ArtistDBManager.GetArtists();
