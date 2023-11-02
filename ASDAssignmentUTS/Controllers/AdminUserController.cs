@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ASDAssignmentUTS.Models;
+using System.Diagnostics;
 
 namespace ASDAssignmentUTS.Controllers
 {
@@ -110,12 +111,29 @@ namespace ASDAssignmentUTS.Controllers
             string password = "";
             for (int i = 0; i < 8; i++)
             {
-                password += (char)random.Next(33, 126);
+                //this is an array that contains all chracter range for alphanumeric characters
+                char[] charRange =
+                {
+                    (char)random.Next(48, 58),
+                    (char)random.Next(65, 91),
+                    (char)random.Next(97, 123)
+                };
+
+                int randomCharRange = random.Next(0, 3);
+                //this will regenerate a random number if it is 3 to prevent an index out of range exception.
+                if (randomCharRange == 3)
+                {
+                    randomCharRange = random.Next(0, 3);
+                }
+
+                //this will randomly select a character range from the array and add it to the password string
+                password += charRange[randomCharRange];
+                Debug.WriteLine(randomCharRange);
             }
-            //updates the user's password
-            UserDBManager.ResetPassword(id, password);
             //shows the new password to the user
             ViewBag.password = password;
+            //updates the user's password
+            UserDBManager.ResetPassword(id, password);
             return View(user);
         }
     }

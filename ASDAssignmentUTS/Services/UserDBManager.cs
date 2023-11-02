@@ -18,7 +18,9 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM RowanUsers";
+                    //the admin user will not be displayed in the user list to prevent the admin from acidentally deleting their own account.
+                    command.CommandText = "SELECT * FROM RowanUsers WHERE NOT Role = @admin";
+                    command.Parameters.AddWithValue("@admin", "Admin");
                     var reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -44,10 +46,11 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = @"INSERT INTO RowanUsers (id, username, password, email) VALUES ((SELECT COALESCE(MAX(id), 0) + 1 FROM RowanUsers), @username, @password, @email)";
+                    command.CommandText = @"INSERT INTO RowanUsers (id, username, password, email, Role) VALUES ((SELECT COALESCE(MAX(id), 0) + 1 FROM RowanUsers), @username, @password, @email, @role)";
                     command.Parameters.AddWithValue("@username", user.username);
                     command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
+                    command.Parameters.AddWithValue("@role", "User");
                     command.ExecuteNonQuery();
                 };
             }
@@ -61,10 +64,9 @@ namespace ASDAssignmentUTS.Services
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = @"UPDATE RowanUsers SET username = @username, password = @password, email = @email WHERE id = @id";
+                    command.CommandText = @"UPDATE RowanUsers SET username = @username, email = @email WHERE id = @id";
                     command.Parameters.AddWithValue("@id", user.id);
                     command.Parameters.AddWithValue("@username", user.username);
-                    command.Parameters.AddWithValue("@password", user.password);
                     command.Parameters.AddWithValue("@email", user.email);
                     command.ExecuteNonQuery();
                 };
