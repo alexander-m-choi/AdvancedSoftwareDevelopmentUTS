@@ -8,23 +8,20 @@
 @{
     Layout = "~/Views/Home/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" href="~/css/songsearch.css" asp-append-version="true" />
+</head>
+
 
 <h1>Song Search</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="SearchResult">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <br />
-            <div class="form-group">
-                <input type="submit" value="Search" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    <form asp-action="SearchResult">
+    <div asp-validation-summary="ModelOnly"></div>
+            <input asp-for="name" class="searchbar"/>
+            <span asp-validation-for="name" ></span>
+            <p></p>
+    <input type="submit" value="Search" class="btn btn-primary m-3" />
+    </form>
+
 
 
