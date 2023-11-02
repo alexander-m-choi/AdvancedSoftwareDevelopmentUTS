@@ -1,0 +1,35 @@
+@model List<Playlist>
+@{
+    ViewData["Title"] = "Add to Playlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/playlist.css" asp-append-version="true" />
+</head>
+
+
+<h1>Your Playlists</h1>
+
+<ul>
+    @foreach (var playlist in Model)
+    {
+        <li>
+            <span>@playlist.name</span> <!-- wrap the playlist name and ID in a span -->
+            <form asp-controller="SongInformation" asp-action="AddToPlaylist" method="post" style="display: inline;">
+                <!-- add style="display: inline;" to the form -->
+                <input type="hidden" name="playlistId" value="@playlist.id" />
+                <input type="hidden" name="songId" value="@ViewBag.SongId" /> <!-- use ViewBag.SongId as the song ID -->
+                <button type="submit" class="btn btn-primary">Add to Playlist</button>
+                <!-- add class="btn btn-primary" to the button -->
+            </form>
+        </li>
+    }
+</ul>
