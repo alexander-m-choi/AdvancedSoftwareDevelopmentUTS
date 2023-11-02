@@ -90,14 +90,22 @@ $("#viewReviews").click(function () {
     //this is for the user management stuffs
     //first, this will delete the user
     $("#deleteUser").click(function () {
+        var token = $('input[name="__RequestVerificationToken"]').val(); // Get the token value
         if (confirm("Are you sure you want to delete this user?")) {
             $.ajax({
                 url: '/AdminUser/Delete',
                 type: 'POST',
+                headers: {
+                    "RequestVerificationToken": token
+                },
                 data: {
                     "id": clickedUserId
                 },
+                error: function() {
+                    alert("Unable to delete user")
+                },
                 success: function (result) {
+                    alert("User has been deleted successfully");
                     window.location.reload();
                 }
             })
