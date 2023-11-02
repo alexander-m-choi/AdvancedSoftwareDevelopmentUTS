@@ -30,29 +30,27 @@ The pull request is reviewed by the group and approved for it to be merged into 
 
 ## Authors
 
-Contributors names and contact info
-
 Mohammad Aamash Qaisar 14105985
 
-- Home page 
+- Home page (A central hub that allows the user to navigate to other features)
+- Song Search system - Users are able to search for the songs in the database
+- Lead of CSS and Azure configurations with the Github repo & project
 
-## Version History
+Christopher Averkos 13855580
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+- All admin side features including User Management, Song Management and Artist Management
 
-## License
+Alexander Choi 14254799
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+- Song Information feature that involved bio of the song, artist details and song details
+- Song Reviews - Users are able to leave reviews for the songs
 
-## Acknowledgments
+Rowan Liley 14156261
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+- Playlist Management - Users are able to create new playlists, update and delete them
+- Artist Search - Users can search for their favourite artists
+
+Lav Moore 24539734
+
+- Login & Register - Allows users and admins to log in the system using Http session
+- Settings - Allows users to update their account details and logout.
