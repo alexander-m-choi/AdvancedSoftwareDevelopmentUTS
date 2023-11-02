@@ -256,7 +256,7 @@ namespace ASDAssignmentUTS.Controllers
                 return RedirectToAction("Settings");
             }
 
-            if (newPassword != confirmNewPassword)
+            if(newPassword != confirmNewPassword)
             {
                 TempData["StatusMessage"] = "New password and confirm new password do not match.";
                 return RedirectToAction("Settings");
@@ -276,12 +276,26 @@ namespace ASDAssignmentUTS.Controllers
 
 
 
+                [HttpPost]
+                public async Task<IActionResult> Logout()
+                {
+                    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                    return RedirectToAction("Login");
+                }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            TempData.Clear(); 
+            HttpContext.Session.Clear();
+
+            // Clear all cookies
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie);
+            }
             return RedirectToAction("Login");
         }
-
     }
 }
